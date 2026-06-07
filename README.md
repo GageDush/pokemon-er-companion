@@ -43,6 +43,16 @@ npm.cmd run dev
 
 The dev server runs at the Vite URL shown in the terminal, usually `http://localhost:5173`.
 
+## GitHub Pages
+
+For a static mobile-viewable build:
+
+```powershell
+npm.cmd run build:pages
+```
+
+This uses the `/pokemon-er-companion/` base path for GitHub Pages project hosting.
+
 ## Checks
 
 ```powershell
