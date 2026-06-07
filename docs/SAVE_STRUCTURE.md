@@ -22,6 +22,14 @@ Do not fill this with guesses. Only document findings from:
 - 128 KiB saves are treated as a dual-bank candidate with 4 KiB-aligned blocks for research purposes only.
 - 64 KiB saves are treated as single-bank aligned candidates for research purposes only.
 - Active non-zero block clusters are exposed as fixture-diff targets, not as proven field maps.
+- Local NextDex save scripts indicate a party/team sector candidate with:
+  - 4 KiB sectors
+  - sector footer near offset `4084`
+  - team sector candidate `id = 2`
+  - party count candidate at offset `564`
+  - party start candidate at offset `568`
+  - 76-byte party slots
+- These offsets are source-backed candidates only. They are useful enough for a medium-confidence read-only preview, but not yet proven against repository fixtures.
 
 ## Research Notes
 
@@ -45,6 +53,8 @@ If it is not proven, label it candidate or unknown.
 
 ## Current Implementation Boundary
 
-Party, PC, progression, randomizer settings, and checksums are not parsed yet. They remain blocked on clean/played save fixtures and documented offset evidence.
+The app now exposes a source-backed party preview when a loaded save matches the local NextDex script layout. That preview is still medium confidence until clean/played fixture comparison confirms the offsets and field meanings.
+
+PC, progression, randomizer settings, and checksums are not parsed yet. They remain blocked on clean/played save fixtures and documented offset evidence.
 
 See `docs/SAVE_FIXTURE_RESEARCH.md` for the fixture plan.

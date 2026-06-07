@@ -1,5 +1,7 @@
 # Save Fixture Research Plan
 
+The app now has a source-backed, read-only party preview derived from local Elite Redux NextDex save scripts. This plan exists to confirm or correct that preview with real fixture evidence before any party field is promoted above medium confidence.
+
 Save parsing remains read-only. This plan is for confidence-building only; it does not authorize save writing.
 
 ## Fixture Set Needed

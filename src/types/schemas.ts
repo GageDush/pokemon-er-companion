@@ -66,6 +66,7 @@ export type Learnset = z.infer<typeof LearnsetSchema>;
 
 export const SpeciesSchema = z.object({
   id: z.string(),
+  rawId: z.number().optional(),
   dexNumber: z.number().nullable(),
   name: z.string(),
   form: z.string().optional(),
@@ -86,6 +87,7 @@ export type Species = z.infer<typeof SpeciesSchema>;
 
 export const MoveSchema = z.object({
   id: z.string(),
+  rawId: z.number().optional(),
   name: z.string(),
   type: z.string().optional(),
   category: z.string().optional(),
@@ -102,6 +104,7 @@ export type Move = z.infer<typeof MoveSchema>;
 
 export const AbilitySchema = z.object({
   id: z.string(),
+  rawId: z.number().optional(),
   name: z.string(),
   effectText: z.string().optional(),
   category: z.string().optional(),
@@ -118,6 +121,7 @@ export type SubAbility = z.infer<typeof SubAbilitySchema>;
 
 export const ItemSchema = z.object({
   id: z.string(),
+  rawId: z.number().optional(),
   name: z.string(),
   description: z.string().optional(),
   category: z.string().optional(),

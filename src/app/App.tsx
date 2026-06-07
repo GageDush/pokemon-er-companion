@@ -28,7 +28,7 @@ import { analyzeDefensiveCoverage } from "../team-builder/coverage";
 import { recommendBuilds } from "../team-builder/recommender";
 import { resolveOwnedTeam } from "../team-builder/teamState";
 import { ParsedSave, ParsedPokemon, Species } from "../types";
-import { AppData, emptyData, loadAppData } from "./dataClient";
+import { AppData, buildSaveParserLookupContext, emptyData, loadAppData } from "./dataClient";
 
 type PageKey =
   | "home"
@@ -233,7 +233,7 @@ function Page({
     case "trainers":
       return <SimpleDataPage title="Trainers" records={data.trainers.map((trainer) => ({ id: trainer.id, title: trainer.name, subtitle: trainer.location, confidence: trainer.confidence, meta: trainer.notes[0] }))} />;
     case "save":
-      return <SaveManagerPage save={currentSave} onSaveLoaded={onSaveLoaded} />;
+      return <SaveManagerPage data={data} save={currentSave} onSaveLoaded={onSaveLoaded} />;
     case "team":
       return <TeamBuilderPage data={data} currentSave={currentSave} />;
     case "debug":
@@ -673,14 +673,15 @@ function SimpleDataPage({ title, records }: { title: string; records: Array<{ id
   );
 }
 
-function SaveManagerPage({ save, onSaveLoaded }: { save?: ParsedSave; onSaveLoaded: (save: ParsedSave | undefined) => void }) {
+function SaveManagerPage({ data, save, onSaveLoaded }: { data: AppData; save?: ParsedSave; onSaveLoaded: (save: ParsedSave | undefined) => void }) {
   const [error, setError] = useState<string | undefined>();
+  const lookupContext = useMemo(() => buildSaveParserLookupContext(data), [data]);
 
   async function onFile(file?: File) {
     if (!file) return;
     setError(undefined);
     try {
-      onSaveLoaded(await analyzeSaveFile(file));
+      onSaveLoaded(await analyzeSaveFile(file, lookupContext));
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not analyze save file.");
     }
@@ -720,6 +721,10 @@ function SaveManagerPage({ save, onSaveLoaded }: { save?: ParsedSave; onSaveLoad
               <span>Candidate offset groups</span>
               <strong>{save.research?.offsetGroups.length ?? 0}</strong>
             </article>
+            <article className="metric">
+              <span>Parsed party rows</span>
+              <strong>{save.party.length}</strong>
+            </article>
           </section>
           <section className="panel">
             <div className="panel-heading">
@@ -736,6 +741,32 @@ function SaveManagerPage({ save, onSaveLoaded }: { save?: ParsedSave; onSaveLoad
             <button className="primary" onClick={() => downloadText("save-debug.json", exportSaveDebugJson(save))}>Export debug JSON</button>
             <ul className="tight-list">{save.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
           </section>
+          {save.party.length > 0 ? (
+            <section className="panel">
+              <div className="panel-heading">
+                <h2>Parsed party preview</h2>
+                <span className="status-pill">source-backed, fixture pending</span>
+              </div>
+              <div className="record-list">
+                {save.party.map((pokemon) => (
+                  <article className="record-row" key={pokemon.id}>
+                    <div>
+                      <h3>
+                        {pokemon.slot ? `Slot ${pokemon.slot}: ` : ""}
+                        {pokemon.speciesName}
+                      </h3>
+                      <p>{pokemon.level !== undefined ? `Level ${pokemon.level}` : "Level unresolved"}</p>
+                      {pokemon.mainAbility ? <small>Main ability: {pokemon.mainAbility}</small> : null}
+                      {pokemon.heldItem ? <small>Held item: {pokemon.heldItem}</small> : null}
+                      {pokemon.moves.length ? <small>Moves: {pokemon.moves.join(", ")}</small> : null}
+                      {pokemon.warnings.map((warning) => <small key={warning}>{warning}</small>)}
+                    </div>
+                    <ConfidenceBadge confidence={pokemon.confidence} />
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
           {save.research ? (
             <>
               <section className="panel">

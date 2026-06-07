@@ -93,6 +93,7 @@ def normalize_moves(data: dict[str, Any], src: dict[str, Any]) -> tuple[list[dic
         move_types = raw.get("types") or []
         record = {
             "id": f"move-{move_id}",
+            "rawId": move_id,
             "name": raw.get("name") or raw.get("NAME") or f"Move #{move_id}",
             "type": table_lookup(type_table, move_types[0]) if move_types else None,
             "category": table_lookup(split_table, raw.get("split")),
@@ -121,6 +122,7 @@ def normalize_abilities(data: dict[str, Any], src: dict[str, Any]) -> tuple[list
             continue
         record = {
             "id": f"ability-{ability_id}",
+            "rawId": ability_id,
             "name": raw.get("name") or f"Ability #{ability_id}",
             "effectText": raw.get("desc") or None,
             "compatibleSpeciesIds": [],
@@ -142,6 +144,7 @@ def normalize_items(data: dict[str, Any], src: dict[str, Any]) -> tuple[list[dic
             continue
         record = {
             "id": f"item-{item_id}",
+            "rawId": item_id,
             "name": raw.get("name") or raw.get("NAME") or f"Item #{item_id}",
             "confidence": "high",
             "source": [src],
@@ -245,6 +248,7 @@ def normalize_species(
         sprite_key = sprite_key_from_species_name(raw.get("NAME"))
         species_records.append({
             "id": species_id,
+            "rawId": raw.get("id"),
             "dexNumber": dex_number if isinstance(dex_number, int) else None,
             "name": raw.get("name") or raw.get("NAME") or species_id,
             "types": [table_lookup(type_table, type_id) or TYPE_NAMES.get(type_id, f"Type #{type_id}") for type_id in stats.get("types", []) if isinstance(type_id, int)],

@@ -27,6 +27,12 @@ export interface AppData {
   warnings: string[];
 }
 
+export interface SaveParserLookupContext {
+  speciesByRawId: Map<number, Species>;
+  movesByRawId: Map<number, Move>;
+  itemsByRawId: Map<number, Item>;
+}
+
 export const emptyData: AppData = {
   species: [],
   learnsets: [],
@@ -84,5 +90,13 @@ export async function loadAppData(): Promise<AppData> {
     wiki,
     searchIndex,
     warnings
+  };
+}
+
+export function buildSaveParserLookupContext(data: AppData): SaveParserLookupContext {
+  return {
+    speciesByRawId: new Map(data.species.filter((species) => typeof species.rawId === "number").map((species) => [species.rawId as number, species])),
+    movesByRawId: new Map(data.moves.filter((move) => typeof move.rawId === "number").map((move) => [move.rawId as number, move])),
+    itemsByRawId: new Map(data.items.filter((item) => typeof item.rawId === "number").map((item) => [item.rawId as number, item]))
   };
 }

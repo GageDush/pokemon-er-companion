@@ -140,7 +140,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -406,7 +406,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -679,7 +679,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -924,7 +924,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -1127,7 +1127,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -1372,7 +1372,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -1624,7 +1624,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -1771,7 +1771,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -1939,7 +1939,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -2233,7 +2233,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -2429,7 +2429,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -2723,7 +2723,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -3017,7 +3017,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -3220,7 +3220,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -3395,7 +3395,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -3570,7 +3570,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -3843,7 +3843,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -3990,7 +3990,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4095,7 +4095,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4200,7 +4200,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4305,7 +4305,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4431,7 +4431,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4536,7 +4536,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4641,7 +4641,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4760,7 +4760,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4893,7 +4893,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -4998,7 +4998,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -5201,7 +5201,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -5348,7 +5348,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -5579,7 +5579,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -5698,7 +5698,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -5817,7 +5817,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -5985,7 +5985,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -6251,7 +6251,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -6356,7 +6356,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -6622,7 +6622,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -6916,7 +6916,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -7210,7 +7210,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -7329,7 +7329,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -7623,7 +7623,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -7728,7 +7728,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -7833,7 +7833,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -7938,7 +7938,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8043,7 +8043,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8148,7 +8148,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8295,7 +8295,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8442,7 +8442,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8547,7 +8547,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8666,7 +8666,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -8785,7 +8785,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9009,7 +9009,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9149,7 +9149,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9268,7 +9268,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9471,7 +9471,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9611,7 +9611,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9751,7 +9751,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -9891,7 +9891,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10031,7 +10031,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10150,7 +10150,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10255,7 +10255,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10360,7 +10360,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10465,7 +10465,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10570,7 +10570,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10675,7 +10675,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -10878,7 +10878,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11081,7 +11081,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11186,7 +11186,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11305,7 +11305,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11410,7 +11410,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11515,7 +11515,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11620,7 +11620,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11725,7 +11725,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11830,7 +11830,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -11935,7 +11935,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -12040,7 +12040,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -12243,7 +12243,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -12376,7 +12376,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -12579,7 +12579,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -12733,7 +12733,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -12957,7 +12957,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -13160,7 +13160,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -13363,7 +13363,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -13566,7 +13566,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -13671,7 +13671,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -13776,7 +13776,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -13979,7 +13979,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -14182,7 +14182,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -14413,7 +14413,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -14518,7 +14518,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -14749,7 +14749,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -14854,7 +14854,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15057,7 +15057,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15162,7 +15162,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15281,7 +15281,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15386,7 +15386,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15505,7 +15505,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15610,7 +15610,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15729,7 +15729,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -15834,7 +15834,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16079,7 +16079,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16184,7 +16184,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16289,7 +16289,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16394,7 +16394,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16513,7 +16513,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16618,7 +16618,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16723,7 +16723,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -16828,7 +16828,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17031,7 +17031,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17164,7 +17164,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17269,7 +17269,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17374,7 +17374,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17479,7 +17479,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17584,7 +17584,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17689,7 +17689,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17794,7 +17794,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -17899,7 +17899,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18004,7 +18004,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18109,7 +18109,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18214,7 +18214,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18319,7 +18319,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18424,7 +18424,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18529,7 +18529,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18634,7 +18634,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18739,7 +18739,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -18970,7 +18970,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19117,7 +19117,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19222,7 +19222,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19369,7 +19369,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19600,7 +19600,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19733,7 +19733,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19866,7 +19866,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -19999,7 +19999,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -20146,7 +20146,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -20293,7 +20293,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -20398,7 +20398,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -20545,7 +20545,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -20748,7 +20748,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -20951,7 +20951,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21056,7 +21056,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21161,7 +21161,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21266,7 +21266,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21539,7 +21539,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21644,7 +21644,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21749,7 +21749,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21854,7 +21854,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -21959,7 +21959,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22064,7 +22064,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22169,7 +22169,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22274,7 +22274,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22379,7 +22379,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22554,7 +22554,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22827,7 +22827,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -22932,7 +22932,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23079,7 +23079,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23226,7 +23226,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23359,7 +23359,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23464,7 +23464,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23569,7 +23569,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23674,7 +23674,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23779,7 +23779,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23884,7 +23884,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -23989,7 +23989,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24122,7 +24122,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24269,7 +24269,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24374,7 +24374,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24521,7 +24521,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24626,7 +24626,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24731,7 +24731,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24836,7 +24836,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -24941,7 +24941,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -25046,7 +25046,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -25151,7 +25151,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -25256,7 +25256,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -25361,7 +25361,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -25466,7 +25466,7 @@
         "sourceFile": "ER-nextdex-main.zip",
         "parser": "extract_sources.py:nextdex-static-game-data",
         "sourcePath": "ER-nextdex-main/static/js/data/gameDataV2.65beta.json",
-        "extractedAt": "2026-06-07T11:37:42Z",
+        "extractedAt": "2026-06-07T22:36:02Z",
         "confidence": "high",
         "notes": []
       }
@@ -25494,7 +25494,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25522,7 +25522,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25550,7 +25550,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25578,7 +25578,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25606,7 +25606,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25634,7 +25634,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25662,7 +25662,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25690,7 +25690,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25718,7 +25718,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25746,7 +25746,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25774,7 +25774,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25802,7 +25802,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25830,7 +25830,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25858,7 +25858,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25886,7 +25886,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25914,7 +25914,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25942,7 +25942,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25970,7 +25970,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -25998,7 +25998,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26026,7 +26026,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26054,7 +26054,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26082,7 +26082,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26110,7 +26110,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26138,7 +26138,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26166,7 +26166,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26194,7 +26194,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26222,7 +26222,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26250,7 +26250,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26278,7 +26278,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26306,7 +26306,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26334,7 +26334,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26362,7 +26362,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26390,7 +26390,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26418,7 +26418,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26446,7 +26446,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26474,7 +26474,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26502,7 +26502,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26530,7 +26530,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26558,7 +26558,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26586,7 +26586,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26614,7 +26614,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26642,7 +26642,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26670,7 +26670,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26698,7 +26698,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26726,7 +26726,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26754,7 +26754,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26782,7 +26782,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26810,7 +26810,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26838,7 +26838,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26866,7 +26866,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26894,7 +26894,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26922,7 +26922,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26950,7 +26950,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -26978,7 +26978,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27006,7 +27006,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27034,7 +27034,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27062,7 +27062,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27090,7 +27090,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27118,7 +27118,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27146,7 +27146,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27174,7 +27174,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27202,7 +27202,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27230,7 +27230,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27258,7 +27258,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27286,7 +27286,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27314,7 +27314,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27342,7 +27342,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27370,7 +27370,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27398,7 +27398,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27426,7 +27426,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27454,7 +27454,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27482,7 +27482,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27510,7 +27510,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27538,7 +27538,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27566,7 +27566,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27594,7 +27594,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27622,7 +27622,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27650,7 +27650,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27678,7 +27678,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27706,7 +27706,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27734,7 +27734,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27762,7 +27762,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27790,7 +27790,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27818,7 +27818,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27846,7 +27846,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27874,7 +27874,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27902,7 +27902,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27930,7 +27930,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27958,7 +27958,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27986,7 +27986,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28014,7 +28014,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28042,7 +28042,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28070,7 +28070,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28098,7 +28098,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28126,7 +28126,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28154,7 +28154,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28182,7 +28182,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28210,7 +28210,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28238,7 +28238,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28266,7 +28266,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28294,7 +28294,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28322,7 +28322,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28350,7 +28350,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28378,7 +28378,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28406,7 +28406,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28434,7 +28434,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28462,7 +28462,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28490,7 +28490,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28518,7 +28518,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28546,7 +28546,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28574,7 +28574,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28602,7 +28602,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28630,7 +28630,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28658,7 +28658,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28686,7 +28686,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28714,7 +28714,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28742,7 +28742,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28770,7 +28770,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28798,7 +28798,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28826,7 +28826,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28854,7 +28854,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28882,7 +28882,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28910,7 +28910,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28938,7 +28938,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28966,7 +28966,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -28994,7 +28994,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29022,7 +29022,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29050,7 +29050,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29078,7 +29078,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29106,7 +29106,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29134,7 +29134,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29162,7 +29162,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29190,7 +29190,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29218,7 +29218,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29246,7 +29246,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29274,7 +29274,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29302,7 +29302,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29330,7 +29330,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29358,7 +29358,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29386,7 +29386,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29414,7 +29414,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29442,7 +29442,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29470,7 +29470,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29498,7 +29498,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29526,7 +29526,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29554,7 +29554,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29582,7 +29582,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29610,7 +29610,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29638,7 +29638,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29666,7 +29666,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29694,7 +29694,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29722,7 +29722,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29750,7 +29750,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29778,7 +29778,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29806,7 +29806,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29834,7 +29834,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29862,7 +29862,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29890,7 +29890,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29918,7 +29918,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29946,7 +29946,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -29974,7 +29974,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30002,7 +30002,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30030,7 +30030,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30058,7 +30058,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30086,7 +30086,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30114,7 +30114,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30142,7 +30142,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30170,7 +30170,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30198,7 +30198,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30226,7 +30226,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30254,7 +30254,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30282,7 +30282,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30310,7 +30310,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30338,7 +30338,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30366,7 +30366,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30394,7 +30394,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30422,7 +30422,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30450,7 +30450,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30478,7 +30478,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30506,7 +30506,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30534,7 +30534,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30562,7 +30562,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30590,7 +30590,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30618,7 +30618,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30646,7 +30646,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30674,7 +30674,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30702,7 +30702,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30730,7 +30730,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30758,7 +30758,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30786,7 +30786,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30814,7 +30814,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30842,7 +30842,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30870,7 +30870,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30898,7 +30898,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30926,7 +30926,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30954,7 +30954,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -30982,7 +30982,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
@@ -31010,7 +31010,7 @@
         "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
         "parser": "extract_sources.py:parse-earliest-locations",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T11:37:44Z",
+        "extractedAt": "2026-06-07T22:36:04Z",
         "confidence": "medium",
         "notes": []
       }
