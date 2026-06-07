@@ -11,8 +11,9 @@
 - Species detail source facts, source warnings, and richer evolution/location summaries.
 - Pokedex filters for type, confidence, and source.
 - Read-only save metadata loader: file size, likely format, SHA-256, hex preview, debug JSON export.
+- Read-only save research inspector: size-family detection, aligned block candidates, generic offset groups, and richer debug export structure.
 - Read-only save byte comparison.
-- Team Builder mock-owned flow with defensive coverage analysis, legality warnings, and save-context fallback logic.
+- Team Builder mock-owned flow with defensive coverage analysis, legality warnings, tested save-context fallback logic, and partial parsed-party handling.
 - Team Builder owned preview uses sprites and an advanced legality toggle.
 - Save Manager fixture-readiness panel tied to the read-only parser roadmap.
 - Tauri v2 and Capacitor configuration files.
@@ -56,11 +57,12 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 
 ## Save Parser Status
 
-- Metadata/debug and byte comparison work.
+- Metadata/debug, aligned block research, and byte comparison work.
 - Party, PC, progression, badges, level cap, randomizer settings, and checksums are not parsed.
 - Save writing is disabled.
 - Fixture instructions exist in `test/fixtures/saves/README.md`.
 - Fixture research plan exists in `docs/SAVE_FIXTURE_RESEARCH.md`.
+- No sanitized local `.sav` or `.srm` fixtures are currently present in the repository.
 
 ## Packaging Blockers
 
@@ -70,7 +72,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 
 ## Exact Next Tasks
 
-1. Parse or extract direct evolution enum names from local NextDex/source files so numeric `kind:*` rows stop showing raw placeholders.
-2. Provide clean/played save fixtures and start offset comparison research.
-3. Feed fixture-backed parsed party data into Team Builder once offsets are proven.
+1. Provide clean/played save fixtures and start offset comparison research against the new block/group inspector.
+2. Prove the first stable party slot boundaries before exposing any parsed party fields.
+3. Parse or extract direct evolution enum names from local NextDex/source files so numeric `kind:*` rows stop showing raw placeholders.
 4. Add Playwright UI smoke tests if browser automation dependencies are approved and stable.

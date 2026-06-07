@@ -1,4 +1,5 @@
 import { ParsedSave, SaveMetadata } from "../types";
+import { buildSaveResearch, detectSaveSizeFamily } from "./saveResearch";
 
 export const HEX_PREVIEW_BYTES = 256;
 
@@ -36,12 +37,14 @@ async function sha256Hex(bytes: Uint8Array): Promise<string> {
 }
 
 export async function analyzeSaveBytes(fileName: string, bytes: Uint8Array): Promise<SaveMetadata> {
+  const sizeFamily = detectSaveSizeFamily(bytes.byteLength);
   return {
     fileName,
     fileSize: bytes.byteLength,
     sha256: await sha256Hex(bytes),
     hexPreview: toHexPreview(bytes),
     likelyFormat: detectLikelySaveFormat(bytes.byteLength),
+    sizeFamily: sizeFamily.label,
     checksumStatus: "unknown",
     parserConfidence: "low"
   };
@@ -51,10 +54,12 @@ export async function parseSaveReadOnly(fileName: string, bytes: Uint8Array): Pr
   const metadata = await analyzeSaveBytes(fileName, bytes);
   return {
     metadata,
+    research: buildSaveResearch(bytes),
     party: [],
     boxes: [],
     warnings: [
       "Read-only metadata parsed. Party and PC offsets are not confirmed for Elite Redux in this repository yet.",
+      "No local save fixtures are present in this repository, so party parsing remains disabled until evidence exists.",
       "No save bytes were mutated."
     ]
   };

@@ -15,10 +15,13 @@ Do not fill this with guesses. Only document findings from:
 - The current app can read save files as binary input without mutation.
 - The current app can calculate file size, SHA-256, likely save-size family, and a 256-byte hex preview.
 - The current app can compare two save byte arrays and group changed byte ranges.
+- The current app can segment a save into aligned research blocks and generic candidate offset groups for fixture comparison.
 
 ## Candidate Findings
 
-None yet.
+- 128 KiB saves are treated as a dual-bank candidate with 4 KiB-aligned blocks for research purposes only.
+- 64 KiB saves are treated as single-bank aligned candidates for research purposes only.
+- Active non-zero block clusters are exposed as fixture-diff targets, not as proven field maps.
 
 ## Research Notes
 

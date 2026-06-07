@@ -11,6 +11,12 @@ Save parsing remains read-only. This plan is for confidence-building only; it do
 - `after_badge1_v2_65_3b.sav`: after earning first badge.
 - Randomized move/ability samples only if those modes matter for the user's playthrough.
 
+## Current Repository State
+
+- No sanitized local save fixtures are present in `test/fixtures/saves/` right now.
+- Because of that, the app exposes only read-only metadata/debug research plus generic block/group inspection.
+- Party, PC, progression, and randomizer parsing remain disabled until fixtures exist and repeated comparisons prove offsets.
+
 ## Research Flow
 
 1. Hash every fixture and keep originals immutable.

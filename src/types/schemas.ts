@@ -179,10 +179,51 @@ export const SaveMetadataSchema = z.object({
   sha256: z.string(),
   hexPreview: z.string(),
   likelyFormat: z.string(),
+  sizeFamily: z.string().optional(),
   checksumStatus: z.enum(["valid", "invalid", "unknown"]).default("unknown"),
   parserConfidence: ConfidenceSchema
 });
 export type SaveMetadata = z.infer<typeof SaveMetadataSchema>;
+
+export const SaveBlockCandidateSchema = z.object({
+  index: z.number(),
+  label: z.string(),
+  start: z.number(),
+  end: z.number(),
+  length: z.number(),
+  nonZeroBytes: z.number(),
+  distinctBytes: z.number(),
+  printableRatio: z.number(),
+  bank: z.enum(["single", "a", "b"]),
+  counterpartIndex: z.number().optional(),
+  pairMatch: z.boolean().optional(),
+  confidence: ConfidenceSchema,
+  notes: z.array(z.string()).default([])
+});
+export type SaveBlockCandidate = z.infer<typeof SaveBlockCandidateSchema>;
+
+export const SaveOffsetGroupSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  start: z.number(),
+  end: z.number(),
+  confidence: ConfidenceSchema,
+  reason: z.string()
+});
+export type SaveOffsetGroup = z.infer<typeof SaveOffsetGroupSchema>;
+
+export const SaveResearchSchema = z.object({
+  sizeFamilyId: z.string(),
+  sizeFamilyLabel: z.string(),
+  blockSize: z.number(),
+  blockCount: z.number(),
+  fixtureStatus: z.enum(["none", "pending", "partial", "confirmed"]).default("none"),
+  provenPartyFields: z.array(z.string()).default([]),
+  blockCandidates: z.array(SaveBlockCandidateSchema).default([]),
+  offsetGroups: z.array(SaveOffsetGroupSchema).default([]),
+  notes: z.array(z.string()).default([])
+});
+export type SaveResearch = z.infer<typeof SaveResearchSchema>;
 
 export const ParsedPokemonSchema = z.object({
   id: z.string(),
@@ -204,6 +245,7 @@ export type ParsedPokemon = z.infer<typeof ParsedPokemonSchema>;
 
 export const ParsedSaveSchema = z.object({
   metadata: SaveMetadataSchema,
+  research: SaveResearchSchema.optional(),
   party: z.array(ParsedPokemonSchema).default([]),
   boxes: z.array(z.array(ParsedPokemonSchema)).default([]),
   progression: z

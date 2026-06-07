@@ -488,6 +488,7 @@ h3 {
 
 .metric-grid,
 .dashboard-grid,
+.save-summary-grid,
 .species-grid,
 .coverage-grid,
 .team-roster,
@@ -501,6 +502,10 @@ h3 {
 }
 
 .dashboard-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.save-summary-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -922,6 +927,10 @@ h3 {
   font-size: 1rem;
 }
 
+.compact-record small {
+  margin-bottom: 2px;
+}
+
 .recommendation-row {
   border-color: rgba(255, 180, 68, 0.18);
 }
@@ -1041,6 +1050,12 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
 }
 
+.unresolved-party-card {
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+}
+
 .tight-list {
   margin: 0;
   padding-left: 20px;
@@ -1147,6 +1162,7 @@ h3 {
   }
 
   .dashboard-grid,
+  .save-summary-grid,
   .two-column,
   .detail-columns {
     grid-template-columns: 1fr;

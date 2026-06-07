@@ -26,6 +26,7 @@ import { compareSaveBytes, SaveCompareResult } from "../save/saveCompare";
 import { searchDocuments } from "../search/searchIndex";
 import { analyzeDefensiveCoverage } from "../team-builder/coverage";
 import { recommendBuilds } from "../team-builder/recommender";
+import { resolveOwnedTeam } from "../team-builder/teamState";
 import { ParsedSave, ParsedPokemon, Species } from "../types";
 import { AppData, emptyData, loadAppData } from "./dataClient";
 
@@ -701,20 +702,94 @@ function SaveManagerPage({ save, onSaveLoaded }: { save?: ParsedSave; onSaveLoad
       </section>
       {error ? <p className="error">{error}</p> : null}
       {save ? (
-        <section className="panel">
-          <div className="panel-heading">
-            <h2>{save.metadata.fileName}</h2>
-            <ConfidenceBadge confidence={save.metadata.parserConfidence} />
-          </div>
-          <dl className="facts">
-            <div><dt>Size</dt><dd>{save.metadata.fileSize} bytes</dd></div>
-            <div><dt>Format</dt><dd>{save.metadata.likelyFormat}</dd></div>
-            <div><dt>SHA-256</dt><dd className="hash">{save.metadata.sha256}</dd></div>
-          </dl>
-          <pre className="hex">{save.metadata.hexPreview}</pre>
-          <button className="primary" onClick={() => downloadText("save-debug.json", exportSaveDebugJson(save))}>Export debug JSON</button>
-          <ul className="tight-list">{save.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
-        </section>
+        <>
+          <section className="save-summary-grid">
+            <article className="metric">
+              <span>Parser confidence</span>
+              <strong>{save.metadata.parserConfidence}</strong>
+            </article>
+            <article className="metric">
+              <span>Size family</span>
+              <strong>{save.metadata.sizeFamily ?? save.metadata.likelyFormat}</strong>
+            </article>
+            <article className="metric">
+              <span>Candidate blocks</span>
+              <strong>{save.research?.blockCandidates.length ?? 0}</strong>
+            </article>
+            <article className="metric">
+              <span>Candidate offset groups</span>
+              <strong>{save.research?.offsetGroups.length ?? 0}</strong>
+            </article>
+          </section>
+          <section className="panel">
+            <div className="panel-heading">
+              <h2>{save.metadata.fileName}</h2>
+              <ConfidenceBadge confidence={save.metadata.parserConfidence} />
+            </div>
+            <dl className="facts">
+              <div><dt>Size</dt><dd>{save.metadata.fileSize} bytes</dd></div>
+              <div><dt>Format</dt><dd>{save.metadata.likelyFormat}</dd></div>
+              <div><dt>Size family</dt><dd>{save.metadata.sizeFamily ?? "Unknown"}</dd></div>
+              <div><dt>SHA-256</dt><dd className="hash">{save.metadata.sha256}</dd></div>
+            </dl>
+            <pre className="hex">{save.metadata.hexPreview}</pre>
+            <button className="primary" onClick={() => downloadText("save-debug.json", exportSaveDebugJson(save))}>Export debug JSON</button>
+            <ul className="tight-list">{save.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
+          </section>
+          {save.research ? (
+            <>
+              <section className="panel">
+                <div className="panel-heading">
+                  <h2>Research notes</h2>
+                  <span className="status-pill">{save.research.fixtureStatus} fixture status</span>
+                </div>
+                <ul className="tight-list">
+                  {save.research.notes.map((note) => <li key={note}>{note}</li>)}
+                  {save.research.provenPartyFields.length === 0 ? <li>No party fields are currently proven enough to expose as parsed save data.</li> : null}
+                </ul>
+              </section>
+              <section className="panel">
+                <div className="panel-heading">
+                  <h2>Candidate offset groups</h2>
+                  <span className="status-pill">{save.research.offsetGroups.length} groups</span>
+                </div>
+                <div className="record-list">
+                  {save.research.offsetGroups.map((group) => (
+                    <article className="record-row" key={group.id}>
+                      <div>
+                        <h3>{group.label}</h3>
+                        <p>{formatOffsetRange(group.start, group.end)}</p>
+                        <small>{group.reason}</small>
+                      </div>
+                      <ConfidenceBadge confidence={group.confidence} />
+                    </article>
+                  ))}
+                </div>
+              </section>
+              <section className="panel">
+                <div className="panel-heading">
+                  <h2>Block candidates</h2>
+                  <span className="status-pill">{save.research.blockSize.toString(16).toUpperCase()}h block size</span>
+                </div>
+                <div className="record-list">
+                  {save.research.blockCandidates.slice(0, 12).map((block) => (
+                    <article className="record-row compact-record" key={`${block.index}-${block.start}`}>
+                      <div>
+                        <h3>{block.label}</h3>
+                        <p>{formatOffsetRange(block.start, block.end)} | {block.nonZeroBytes} non-zero byte(s)</p>
+                        <small>
+                          {block.bank !== "single" ? `Bank ${block.bank.toUpperCase()}` : "Single-bank candidate"} | Distinct bytes {block.distinctBytes} | Printable ratio {block.printableRatio}
+                        </small>
+                        {block.notes.map((note) => <small key={note}>{note}</small>)}
+                      </div>
+                      <ConfidenceBadge confidence={block.confidence} />
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </>
+          ) : null}
+        </>
       ) : null}
       <section className="panel">
         <div className="panel-heading">
@@ -745,8 +820,9 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
     confidence: "low",
     warnings: ["Mock owned Pokemon used until save party/PC offsets are confirmed."]
   }));
-  const owned = currentSave?.party.length ? currentSave.party : mockOwned;
-  const usingMockTeam = !currentSave?.party.length;
+  const teamResolution = resolveOwnedTeam(currentSave, mockOwned);
+  const owned = teamResolution.ownedPokemon;
+  const usingMockTeam = teamResolution.source === "mock-fallback";
   const recommendations = recommendBuilds({
     ownedPokemon: owned,
     species: data.species,
@@ -757,6 +833,7 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
   const teamSpecies = owned
     .map((owned) => data.species.find((species) => species.id === owned.speciesId))
     .filter((species): species is Species => Boolean(species));
+  const unresolvedOwned = owned.filter((pokemon) => !pokemon.speciesId || !data.species.find((species) => species.id === pokemon.speciesId));
   const coverage = analyzeDefensiveCoverage(teamSpecies);
   return (
     <section className="content-stack">
@@ -782,10 +859,20 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
           <dl className="facts">
             <div><dt>Loaded file</dt><dd>{currentSave.metadata.fileName}</dd></div>
             <div><dt>Format</dt><dd>{currentSave.metadata.likelyFormat}</dd></div>
+            <div><dt>Data source</dt><dd>{teamResolution.source === "parsed-save" ? "Parsed save party" : "Mock fallback roster"}</dd></div>
             <div><dt>Party rows</dt><dd>{currentSave.party.length}</dd></div>
           </dl>
+          <ul className="tight-list">{teamResolution.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
         </section>
-      ) : null}
+      ) : (
+        <section className="panel">
+          <div className="panel-heading">
+            <h2>Team data source</h2>
+            <span className="status-pill">mock fallback</span>
+          </div>
+          <ul className="tight-list">{teamResolution.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
+        </section>
+      )}
       <div className="panel-heading">
         <h2>Owned Preview</h2>
         <button className="primary secondary" type="button" onClick={() => setAdvanced((value) => !value)}>{advanced ? "Simple" : "Advanced"}</button>
@@ -794,9 +881,21 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
         {teamSpecies.map((species) => (
           <SpeciesCard species={species} key={species.id} />
         ))}
+        {unresolvedOwned.map((pokemon) => (
+          <article className="panel unresolved-party-card" key={pokemon.id}>
+            <div className="panel-heading">
+              <h3>{pokemon.speciesName}</h3>
+              <ConfidenceBadge confidence={pokemon.confidence} />
+            </div>
+            <p>Parsed party row exists, but species mapping is incomplete.</p>
+            {pokemon.level !== undefined ? <small>Level {pokemon.level}</small> : null}
+            {pokemon.warnings.map((warning) => <small key={warning}>{warning}</small>)}
+          </article>
+        ))}
       </div>
       <section className="panel">
         <h2>Defensive Coverage</h2>
+        {teamSpecies.length === 0 ? <p className="empty compact">Coverage stays unavailable until at least one team member resolves to parsed species data.</p> : null}
         <div className="coverage-grid">
           {coverage.map((row) => (
             <div className="coverage-row" key={row.type}>
@@ -897,4 +996,10 @@ function downloadText(fileName: string, text: string) {
   link.download = fileName;
   link.click();
   URL.revokeObjectURL(url);
+}
+
+function formatOffsetRange(start: number, end: number): string {
+  const startHex = `0x${start.toString(16).padStart(6, "0")}`;
+  const endHex = `0x${Math.max(start, end - 1).toString(16).padStart(6, "0")}`;
+  return `${startHex} - ${endHex}`;
 }

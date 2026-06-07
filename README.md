@@ -96,7 +96,7 @@ Sprites are extracted locally from the provided NextDex archive. The mobile app 
 
 ## Save Files
 
-The Save Manager accepts local `.sav`/`.srm` files and shows file name, file size, likely format, SHA-256, first 256 bytes as hex preview, and debug JSON export. Party/PC parsing remains disabled/low-confidence until clean and played save fixtures prove offsets and checksums.
+The Save Manager accepts local `.sav`/`.srm` files and shows file name, file size, likely format, size-family research, SHA-256, aligned block candidates, candidate offset groups, first 256 bytes as hex preview, and debug JSON export. Party/PC parsing remains disabled/low-confidence until clean and played save fixtures prove offsets and checksums.
 
 ## Current App UX
 
@@ -105,7 +105,7 @@ The Save Manager accepts local `.sav`/`.srm` files and shows file name, file siz
 - Mobile-first Pokedex with local sprites, type chips, confidence badges, filters, and empty-state guidance.
 - Species detail tabs: Overview, Stats, Learnset, Evolution, Locations, Builds, and Source, with provenance facts and source warnings.
 - Team Builder preview with local sprites, defensive coverage, save-context awareness, and advanced legality details.
-- Save and Debug screens stay read-only and local, with fixture-readiness scaffolding for future parser work.
+- Save and Debug screens stay read-only and local, with fixture-readiness scaffolding plus aligned block/group save research panels.
 
 ## Save Fixture Research
 
