@@ -4,6 +4,8 @@ The app now has a source-backed, read-only party preview derived from local Elit
 
 Current local status: a search across common user folders did not find obvious Elite Redux `.sav` or `.srm` milestone files yet, so fixture-backed validation still needs either exported emulator saves or manually provided private fixtures.
 
+Update: one private `128 KiB` local `.sav` was later found outside the repository and used for verification. Result: the current parser appears directionally close enough to resolve some party/PC rows, but too many rows still decode to unresolved numeric species IDs for the layout to be treated as validated.
+
 Save parsing remains read-only. This plan is for confidence-building only; it does not authorize save writing.
 
 ## Fixture Set Needed

@@ -110,6 +110,12 @@ The app now also attempts **source-backed, read-only party and PC previews** usi
 
 These save previews are still **medium confidence only** until clean/played fixtures confirm the offsets against real saves. Progression, randomizer settings, and checksums remain unproven.
 
+For local verification against a private save file without using the UI:
+
+```powershell
+node_modules\.bin\vite-node.cmd scripts\verify_save.ts C:\path\to\your.sav
+```
+
 ## Current App UX
 
 - Short cinematic cold-load boot for initial local data sync and Dex activation.

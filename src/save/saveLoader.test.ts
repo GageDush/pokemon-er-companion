@@ -123,6 +123,63 @@ describe("saveLoader", () => {
     });
     expect(parsed.warnings.join(" ")).toContain("source-backed NextDex save scripts");
   });
+
+  it("downgrades parser confidence when most resolved rows are still numeric or unresolved", async () => {
+    const bytes = new Uint8Array(128 * 1024);
+    bytes[4084] = 0x02;
+    bytes[564] = 0x02;
+
+    writeSyntheticPartyMon(bytes, 568, {
+      species: 1,
+      heldItem: 2,
+      move1: 1,
+      move2: 0,
+      move3: 0,
+      move4: 0,
+      abilityNum: 0,
+      level: 12
+    });
+
+    writeSyntheticPartyMon(bytes, 568 + 76, {
+      species: 65535,
+      heldItem: 0,
+      move1: 1,
+      move2: 0,
+      move3: 0,
+      move4: 0,
+      abilityNum: 0,
+      level: 12
+    });
+
+    const lookups: SaveParserLookupContext = {
+      speciesByRawId: new Map([
+        [1, {
+          id: "species-bulbasaur",
+          rawId: 1,
+          dexNumber: 1,
+          name: "Bulbasaur",
+          types: ["Grass", "Poison"],
+          baseStats: null,
+          abilities: [{ id: "ability-overgrow", name: "Overgrow", sourceKind: "parsed", confidence: "high" }],
+          subAbilities: [],
+          evolutionIds: [],
+          locationIds: [],
+          confidence: "high",
+          source: []
+        }]
+      ]),
+      movesByRawId: new Map([
+        [1, { id: "move-tackle", rawId: 1, name: "Tackle", flags: [], confidence: "high", source: [] }]
+      ]),
+      itemsByRawId: new Map([
+        [2, { id: "item-potion", rawId: 2, name: "Potion", confidence: "high", source: [] }]
+      ])
+    };
+
+    const parsed = await parseSaveReadOnly("mixed-quality.sav", bytes, lookups);
+    expect(parsed.metadata.parserConfidence).toBe("low");
+    expect(parsed.warnings.join(" ")).toContain("Current resolution quality: party 1/2");
+  });
 });
 
 type SyntheticMonValues = {

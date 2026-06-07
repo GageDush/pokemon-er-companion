@@ -32,6 +32,7 @@
 - Save Manager and Team Builder should explicitly say when a loaded save only provides metadata and not confirmed party/PC parsing.
 - Save Manager and Team Builder should explicitly say when a loaded save provides a source-backed party preview that is still awaiting fixture validation.
 - Team Builder may render partial parsed-party rows only when they truly exist; unresolved rows must remain visibly uncertain.
+- If a real local save produces poor species-resolution rates, overall parser confidence should drop back to low even when some rows look plausible.
 
 ## Rules
 

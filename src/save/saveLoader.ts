@@ -17,6 +17,18 @@ const DIRECT_PC_FIRST_SECTOR_SKIP = 4;
 const DIRECT_PC_SECTOR_DATA_BYTES = 3968;
 const DIRECT_PC_LAST_SECTOR_DATA_BYTES = 2000;
 
+interface PcLayoutCandidate {
+  id: string;
+  label: string;
+  startSectorId: number;
+}
+
+const PC_LAYOUT_CANDIDATES: PcLayoutCandidate[] = [
+  { id: "new-layout", label: "new layout sectors 8..16", startSectorId: 8 },
+  { id: "legacy-layout", label: "legacy layout sectors 5..13", startSectorId: 5 },
+  { id: "test-layout", label: "test structure sectors 12..20", startSectorId: 12 }
+];
+
 interface EliteReduxFooterData {
   teamSectorOffset?: number;
   pcSectorOffsets: number[];
@@ -88,8 +100,11 @@ export async function analyzeSaveBytes(fileName: string, bytes: Uint8Array): Pro
 export async function parseSaveReadOnly(fileName: string, bytes: Uint8Array, lookups?: SaveParserLookupContext): Promise<ParsedSave> {
   const metadata = await analyzeSaveBytes(fileName, bytes);
   const parsed = lookups ? parseEliteReduxSave(bytes, lookups) : { party: [], boxes: [], warnings: [] };
-  const parserConfidence = parsed.party.length > 0 || parsed.boxes.some((box) => box.length > 0) ? "medium" : "low";
+  const parserConfidence = deriveParserConfidence(parsed.party, parsed.boxes);
   metadata.parserConfidence = parserConfidence;
+  const partyResolved = parsed.party.filter((pokemon) => Boolean(pokemon.speciesId)).length;
+  const flatBoxes = parsed.boxes.flat();
+  const pcResolved = flatBoxes.filter((pokemon) => Boolean(pokemon.speciesId)).length;
   const warnings = [
     "Read-only metadata parsed. Party and PC offsets are not fixture-confirmed for Elite Redux in this repository yet.",
     parsed.party.length > 0
@@ -98,6 +113,9 @@ export async function parseSaveReadOnly(fileName: string, bytes: Uint8Array, loo
     parsed.boxes.some((box) => box.length > 0)
       ? "PC box rows were parsed from source-backed NextDex save scripts. Treat them as medium confidence until clean/played fixtures confirm the storage layout."
       : "No source-backed PC box rows were detected in this save.",
+    parsed.party.length > 0 || flatBoxes.length > 0
+      ? `Current resolution quality: party ${partyResolved}/${parsed.party.length}, PC ${pcResolved}/${flatBoxes.length}.`
+      : "Current resolution quality: no source-backed rows resolved.",
     "No save bytes were mutated."
   ];
 
@@ -165,37 +183,33 @@ function parseEliteReduxParty(bytes: Uint8Array, lookups: SaveParserLookupContex
 }
 
 function parseEliteReduxBoxes(bytes: Uint8Array, lookups: SaveParserLookupContext, footer: EliteReduxFooterData): ParsedPokemon[][] {
-  const directPcSectors = footer.pcSectorOffsets.slice(0, DIRECT_PC_SECTOR_COUNT).filter((offset): offset is number => typeof offset === "number");
-  if (directPcSectors.length < DIRECT_PC_SECTOR_COUNT) return [];
+  const candidates = PC_LAYOUT_CANDIDATES
+    .map((layout) => ({
+      layout,
+      boxes: parsePcBoxesForLayout(bytes, lookups, footer, layout),
+    }))
+    .map((candidate) => ({
+      ...candidate,
+      score: scorePcBoxes(candidate.boxes)
+    }))
+    .filter((candidate) => candidate.boxes.length > 0);
 
-  const flattened: ParsedPokemon[] = [];
-  let missedBytes: Uint8Array | undefined;
-  let remainingUnread = BOX_COUNT * BOX_CAPACITY;
+  if (candidates.length === 0) return [];
+  candidates.sort((left, right) => right.score - left.score);
+  return candidates[0].boxes;
+}
 
-  for (let sectorIndex = 0; sectorIndex < DIRECT_PC_SECTOR_COUNT && remainingUnread > 0; sectorIndex += 1) {
-    let sectorOffset = directPcSectors[sectorIndex];
-    let maxOffset = sectorOffset + DIRECT_PC_SECTOR_DATA_BYTES;
-    if (sectorIndex === 0) {
-      sectorOffset += DIRECT_PC_FIRST_SECTOR_SKIP;
-    }
-    if (sectorIndex === DIRECT_PC_SECTOR_COUNT - 1) {
-      maxOffset = directPcSectors[sectorIndex] + DIRECT_PC_LAST_SECTOR_DATA_BYTES;
-    }
+function deriveParserConfidence(party: ParsedPokemon[], boxes: ParsedPokemon[][]): SaveMetadata["parserConfidence"] {
+  const partyResolved = party.filter((pokemon) => Boolean(pokemon.speciesId)).length;
+  const partyRatio = party.length > 0 ? partyResolved / party.length : 0;
+  const flatBoxes = boxes.flat();
+  const boxResolved = flatBoxes.filter((pokemon) => Boolean(pokemon.speciesId)).length;
+  const boxRatio = flatBoxes.length > 0 ? boxResolved / flatBoxes.length : 0;
 
-    const result = readDirectPcSector(sectorOffset, bytes, missedBytes, remainingUnread, maxOffset, flattened.length, lookups);
-    missedBytes = result.missedBytes;
-    remainingUnread = result.remainingUnread;
-    flattened.push(...result.parsed);
+  if ((party.length > 0 && partyRatio >= 0.75) || (flatBoxes.length > 0 && boxRatio >= 0.75)) {
+    return "medium";
   }
-
-  if (flattened.length === 0) return [];
-  const boxes: ParsedPokemon[][] = [];
-  for (let boxIndex = 0; boxIndex < BOX_COUNT; boxIndex += 1) {
-    const start = boxIndex * BOX_CAPACITY;
-    const members = flattened.slice(start, start + BOX_CAPACITY);
-    if (members.length > 0) boxes.push(members);
-  }
-  return boxes;
+  return "low";
 }
 
 function buildPartyWarnings(raw: RawPartyMon, species: Species | undefined, resolvedMoves: number): string[] {
@@ -221,9 +235,16 @@ function buildLayoutWarnings(footer: EliteReduxFooterData): string[] {
   if (footer.teamSectorOffset === undefined) {
     warnings.push("Could not identify the expected team sector candidate from source-backed save scripts.");
   }
-  const directPcSectorCount = footer.pcSectorOffsets.filter((offset): offset is number => typeof offset === "number").length;
-  if (directPcSectorCount > 0 && directPcSectorCount < DIRECT_PC_SECTOR_COUNT) {
-    warnings.push(`Detected ${directPcSectorCount} of ${DIRECT_PC_SECTOR_COUNT} expected PC sectors for the source-backed direct layout.`);
+  const candidateCounts = PC_LAYOUT_CANDIDATES
+    .map((layout) => ({
+      layout,
+      count: getPcSectorOffsetsForLayout(footer, layout).length
+    }))
+    .filter((entry) => entry.count > 0);
+  if (candidateCounts.length > 0) {
+    warnings.push(
+      `Observed PC sector candidates: ${candidateCounts.map((entry) => `${entry.layout.label} (${entry.count}/${DIRECT_PC_SECTOR_COUNT})`).join("; ")}.`
+    );
   }
   return warnings;
 }
@@ -294,6 +315,64 @@ function readDirectPcSector(
     missedBytes: carry,
     remainingUnread: remaining
   };
+}
+
+function parsePcBoxesForLayout(
+  bytes: Uint8Array,
+  lookups: SaveParserLookupContext,
+  footer: EliteReduxFooterData,
+  layout: PcLayoutCandidate
+): ParsedPokemon[][] {
+  const directPcSectors = getPcSectorOffsetsForLayout(footer, layout);
+  if (directPcSectors.length < DIRECT_PC_SECTOR_COUNT) return [];
+
+  const flattened: ParsedPokemon[] = [];
+  let missedBytes: Uint8Array | undefined;
+  let remainingUnread = BOX_COUNT * BOX_CAPACITY;
+
+  for (let sectorIndex = 0; sectorIndex < DIRECT_PC_SECTOR_COUNT && remainingUnread > 0; sectorIndex += 1) {
+    let sectorOffset = directPcSectors[sectorIndex];
+    let maxOffset = sectorOffset + DIRECT_PC_SECTOR_DATA_BYTES;
+    if (sectorIndex === 0) {
+      sectorOffset += DIRECT_PC_FIRST_SECTOR_SKIP;
+    }
+    if (sectorIndex === DIRECT_PC_SECTOR_COUNT - 1) {
+      maxOffset = directPcSectors[sectorIndex] + DIRECT_PC_LAST_SECTOR_DATA_BYTES;
+    }
+
+    const result = readDirectPcSector(sectorOffset, bytes, missedBytes, remainingUnread, maxOffset, flattened.length, lookups);
+    missedBytes = result.missedBytes;
+    remainingUnread = result.remainingUnread;
+    flattened.push(...result.parsed);
+  }
+
+  if (flattened.length === 0) return [];
+  const boxes: ParsedPokemon[][] = [];
+  for (let boxIndex = 0; boxIndex < BOX_COUNT; boxIndex += 1) {
+    const start = boxIndex * BOX_CAPACITY;
+    const members = flattened.slice(start, start + BOX_CAPACITY);
+    if (members.length > 0) boxes.push(members);
+  }
+  return boxes;
+}
+
+function getPcSectorOffsetsForLayout(footer: EliteReduxFooterData, layout: PcLayoutCandidate): number[] {
+  const offsets: number[] = [];
+  for (let sectorId = layout.startSectorId; sectorId < layout.startSectorId + DIRECT_PC_SECTOR_COUNT; sectorId += 1) {
+    const offset = footer.sectorOffsets[sectorId];
+    if (typeof offset === "number") offsets.push(offset);
+  }
+  return offsets;
+}
+
+function scorePcBoxes(boxes: ParsedPokemon[][]): number {
+  let score = 0;
+  for (const pokemon of boxes.flat()) {
+    if (pokemon.speciesId) score += 4;
+    if (pokemon.moves.length > 0) score += 1;
+    if (pokemon.heldItem) score += 1;
+  }
+  return score;
 }
 
 function readPartyMon(start: number, bytes: Uint8Array): RawPartyMon {

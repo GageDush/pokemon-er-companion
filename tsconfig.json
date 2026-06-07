@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "scripts/**/*.d.ts", "vite.config.ts", "vitest.config.ts", "capacitor.config.ts", "eslint.config.js"]
+  "include": ["src", "scripts/**/*.ts", "scripts/**/*.d.ts", "vite.config.ts", "vitest.config.ts", "capacitor.config.ts", "eslint.config.js"]
 }
