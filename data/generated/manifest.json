@@ -1,0 +1,69 @@
+{
+  "gameVersion": "2.65.3b",
+  "generatedAt": "2026-06-07T10:54:09Z",
+  "parserVersion": "0.1.0",
+  "sources": [
+    {
+      "sourceFile": "ER-nextdex-main.zip",
+      "parser": "extract_sources.py:nextdex-game-data",
+      "recordCounts": {
+        "species": 1253,
+        "learnsets": 1253,
+        "evolutions": 581,
+        "moves": 739,
+        "abilities": 436,
+        "subabilities": 436
+      },
+      "warnings": [
+        "Move names were not present in bundled NextDex JSON; generated move records preserve numeric IDs at low confidence.",
+        "Ability and sub-ability names were not present in bundled NextDex JSON; generated ability records preserve numeric IDs at low confidence."
+      ],
+      "confidence": "medium"
+    },
+    {
+      "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
+      "parser": "extract_sources.py:parse-earliest-locations",
+      "recordCounts": {
+        "locations": 198
+      },
+      "warnings": [],
+      "confidence": "low"
+    },
+    {
+      "sourceFile": "ER Trainer Locations 2.5.xlsx",
+      "parser": "extract_sources.py:parse-trainer-locations",
+      "recordCounts": {
+        "trainers": 795
+      },
+      "warnings": [],
+      "confidence": "low"
+    },
+    {
+      "sourceFile": "PDF docs",
+      "parser": "extract_sources.py:parse-pdf-docs",
+      "recordCounts": {
+        "wiki": 7
+      },
+      "warnings": [],
+      "confidence": "medium"
+    }
+  ],
+  "totals": {
+    "species": 1253,
+    "learnsets": 1253,
+    "evolutions": 581,
+    "moves": 739,
+    "abilities": 436,
+    "subabilities": 436,
+    "items": 0,
+    "locations": 198,
+    "trainers": 795,
+    "mechanics": 7,
+    "search-index": 2253,
+    "warnings": 2
+  },
+  "warnings": [
+    "Move names were not present in bundled NextDex JSON; generated move records preserve numeric IDs at low confidence.",
+    "Ability and sub-ability names were not present in bundled NextDex JSON; generated ability records preserve numeric IDs at low confidence."
+  ]
+}
