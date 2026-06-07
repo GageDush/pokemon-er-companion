@@ -1,0 +1,50 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Local env and secrets
+.env
+.env.*
+!.env.example
+
+# Raw copyrighted/binary/source inputs
+data/raw/*
+!data/raw/_PUT_SOURCE_FILES_HERE.md
+!data/raw/README.md
+data/raw/source-tab/
+data/raw/**/*.gba
+data/raw/**/*.gbc
+data/raw/**/*.gb
+data/raw/**/*.nds
+data/raw/**/*.3ds
+data/raw/**/*.cia
+data/raw/**/*.sav
+data/raw/**/*.srm
+data/raw/**/*.zip
+data/raw/**/*.7z
+data/raw/**/*.rar
+data/raw/**/*.pdf
+data/raw/**/*.xlsx
+data/raw/**/*.xls
+data/raw/**/*.jpeg
+data/raw/**/*.jpg
+data/raw/**/*.png
+
+# Keep generated normalized JSON/docs, but ignore bulky generated media by default
+public/generated/assets/
+data/generated/assets/
+
+# Tauri / Capacitor platform products
+src-tauri/target/
+src-tauri/gen/
+android/
+ios/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

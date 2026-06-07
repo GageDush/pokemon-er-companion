@@ -1,0 +1,74 @@
+Start a new local-first project for the Pokémon Elite Redux Companion App.
+
+Read AGENTS.md and all files in docs/ before coding.
+
+Important: this project is a local-first companion app for Pokémon Elite Redux. It is not a hosted website. It must preserve a path to desktop and mobile support.
+
+Hard restrictions:
+- Do not implement NPC editing.
+- Do not implement generated Pokémon.
+- Do not create Pokémon from nothing.
+- Do not implement save writing yet.
+- Do not recommend illegal builds.
+- Do not assume vanilla Emerald mechanics when Elite Redux differs.
+
+Task 1:
+
+1. Initialize a TypeScript project suitable for a local-first app prototype.
+2. Use React + Vite unless an existing stack is already present.
+3. Create this structure:
+
+   src/app
+   src/components
+   src/parsers
+   src/save
+   src/dex
+   src/team-builder
+   src/search
+   src/types
+   scripts
+   docs
+   data/raw
+   data/generated
+
+4. Create placeholder pages/components for:
+
+   - Home
+   - Wiki
+   - Pokédex
+   - Save Manager
+   - Team Builder
+   - Debug/Compare
+
+5. Create TypeScript schemas/types for:
+
+   - Species
+   - Move
+   - Ability
+   - SubAbility
+   - Learnset
+   - Location
+   - Trainer
+   - ParsedSave
+   - ParsedPokemon
+   - BuildRecommendation
+
+6. Create a read-only save loader utility that accepts a binary file and returns:
+
+   - file size
+   - SHA-256 hash
+   - first 256 bytes as hex preview
+   - parserConfidence: "low"
+
+7. Add README instructions for running the project.
+8. Add basic tests for the save loader utility.
+9. Do not implement save editing.
+10. Do not implement NPC editing.
+11. Do not implement generated Pokémon.
+
+After completing, summarize:
+
+- files created
+- commands run
+- tests run
+- next recommended task
