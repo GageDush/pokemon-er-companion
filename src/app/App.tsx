@@ -1,6 +1,7 @@
 import {
   Activity,
   ArrowLeft,
+  BadgeInfo,
   BookOpen,
   Bug,
   Cog,
@@ -64,17 +65,45 @@ export function App() {
   const [data, setData] = useState<AppData>(emptyData);
   const [currentSave, setCurrentSave] = useState<ParsedSave | undefined>();
   const [loading, setLoading] = useState(true);
+  const [bootReady, setBootReady] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
+    let dataResolved = false;
+    let minimumElapsed = false;
+
+    const maybeFinish = () => {
+      if (mounted && dataResolved && minimumElapsed) {
+        setBootReady(true);
+      }
+    };
+
+    const timer = window.setTimeout(() => {
+      minimumElapsed = true;
+      maybeFinish();
+    }, 1350);
+
     loadAppData().then((loaded) => {
+      if (!mounted) return;
       setData(loaded);
       setLoading(false);
+      dataResolved = true;
+      maybeFinish();
     });
+
+    return () => {
+      mounted = false;
+      window.clearTimeout(timer);
+    };
   }, []);
 
   const totals = data.manifest?.totals;
   const primaryNav = NAV.filter((item) => ["home", "pokedex", "team", "save"].includes(item.key));
   const utilityNav = NAV.filter((item) => !["home", "pokedex", "team", "save"].includes(item.key));
+
+  if (!bootReady) {
+    return <BootLoader loading={loading} speciesCount={totals?.species ?? data.species.length} />;
+  }
 
   return (
     <div className="shell">
@@ -101,7 +130,7 @@ export function App() {
       <main className="main">
         <header className="topbar">
           <div>
-            <p className="eyebrow">Local-first read-only vertical slice</p>
+            <p className="eyebrow">Local-first field companion</p>
             <h1>{NAV.find((item) => item.key === page)?.label}</h1>
             <div className="capability-row">
               <span className="capsule capsule-blue">iPhone-first</span>
@@ -132,6 +161,42 @@ export function App() {
           );
         })}
       </nav>
+    </div>
+  );
+}
+
+function BootLoader({ loading, speciesCount }: { loading: boolean; speciesCount: number }) {
+  const signals = [
+    "Dex link establishing",
+    "Local source tables verified",
+    "Read-only companion online"
+  ];
+
+  return (
+    <div className="boot-shell" aria-live="polite">
+      <div className="boot-noise" />
+      <div className="boot-gradient boot-gradient-a" />
+      <div className="boot-gradient boot-gradient-b" />
+      <div className="boot-core">
+        <div className="boot-ring boot-ring-outer" />
+        <div className="boot-ring boot-ring-mid" />
+        <div className="boot-ring boot-ring-inner" />
+        <div className="boot-scanline" />
+        <div className="boot-content">
+          <span className="boot-kicker">Elite Redux Companion</span>
+          <h1>Field device booting</h1>
+          <p>Cold-loading local Dex data, confidence metadata, and read-only save tools.</p>
+          <div className="boot-status">
+            <span>{loading ? "Syncing generated sources" : "Local data ready"}</span>
+            <strong>{speciesCount || "1906"} species indexed</strong>
+          </div>
+          <ul className="boot-signal-list">
+            {signals.map((signal) => (
+              <li key={signal}>{signal}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
@@ -188,9 +253,12 @@ function HomePage({ data, currentSave }: { data: AppData; currentSave?: ParsedSa
   ];
   return (
     <section className="content-stack">
-      <div className="hero-band">
-        <h2>Mobile-first Elite Redux companion with bundled local sprites, source confidence, and read-only save research.</h2>
-        <p>Core workflows run locally. Save parsing stays read-only, and build guidance remains constrained to parsed source data or current save observations.</p>
+      <div className="hero-band home-hero">
+        <div className="hero-copy">
+          <span className="section-kicker">Dex + team + save workflow</span>
+          <h2>Premium local companion for Elite Redux runs, without hiding uncertainty.</h2>
+          <p>Built for quick in-hand decisions: search species, inspect builds, check confidence, and review save metadata without ever uploading the game or mutating the save.</p>
+        </div>
         <div className="hero-actions">
           <span className="soft-pill">No phone-side ROM upload</span>
           <span className="soft-pill">Private/local sprite bundling</span>
@@ -205,21 +273,34 @@ function HomePage({ data, currentSave }: { data: AppData; currentSave?: ParsedSa
           </div>
         ))}
       </div>
-      <section className="panel">
-        <div className="panel-heading">
-          <h2>Read-only save status</h2>
-          <span className="status-pill">{currentSave ? "Loaded" : "Awaiting fixture-backed save"}</span>
-        </div>
-        {currentSave ? (
-          <dl className="facts">
-            <div><dt>File</dt><dd>{currentSave.metadata.fileName}</dd></div>
-            <div><dt>Format</dt><dd>{currentSave.metadata.likelyFormat}</dd></div>
-            <div><dt>Party parsed</dt><dd>{currentSave.party.length > 0 ? `${currentSave.party.length} slot(s)` : "Not yet confirmed"}</dd></div>
-          </dl>
-        ) : (
-          <p className="notice">Load a local save in Save Manager to capture metadata, hash, and debug output. Party and PC views remain disabled until fixture-backed offsets are proven.</p>
-        )}
-      </section>
+      <div className="dashboard-grid">
+        <section className="panel feature-panel">
+          <div className="panel-heading">
+            <h2>Read-only save status</h2>
+            <span className="status-pill">{currentSave ? "Loaded" : "Awaiting fixture-backed save"}</span>
+          </div>
+          {currentSave ? (
+            <dl className="facts">
+              <div><dt>File</dt><dd>{currentSave.metadata.fileName}</dd></div>
+              <div><dt>Format</dt><dd>{currentSave.metadata.likelyFormat}</dd></div>
+              <div><dt>Party parsed</dt><dd>{currentSave.party.length > 0 ? `${currentSave.party.length} slot(s)` : "Not yet confirmed"}</dd></div>
+            </dl>
+          ) : (
+            <p className="notice">Load a local save in Save Manager to capture metadata, hash, and debug output. Party and PC views remain disabled until fixture-backed offsets are proven.</p>
+          )}
+        </section>
+        <section className="panel feature-panel">
+          <div className="panel-heading">
+            <h2>Trust model</h2>
+            <BadgeInfo size={18} aria-hidden="true" />
+          </div>
+          <ul className="tight-list">
+            <li>Recommendations stay constrained to parsed game data and current-owned state.</li>
+            <li>Low-confidence rows remain searchable, but not silently promoted.</li>
+            <li>Save parsing stays read-only until fixture-backed validation exists.</li>
+          </ul>
+        </section>
+      </div>
       {data.warnings.length > 0 ? (
         <section className="panel">
           <h2>Data Warnings</h2>
@@ -274,25 +355,31 @@ function PokedexPage({ data }: { data: AppData }) {
     .slice(0, 120);
   return (
     <section className="content-stack">
-      <SearchBox value={query} onChange={setQuery} placeholder="Search species and types" />
-      <div className="filter-bar">
-        <select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)} aria-label="Filter by type">
-          <option value="">All types</option>
-          {typeOptions.map((type) => <option value={type} key={type}>{type}</option>)}
-        </select>
-        <select value={confidenceFilter} onChange={(event) => setConfidenceFilter(event.target.value)} aria-label="Filter by confidence">
-          <option value="">All confidence</option>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
-        <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value)} aria-label="Filter by source">
-          <option value="">All sources</option>
-          <option value="ER-nextdex-main.zip">NextDex</option>
-          <option value=".xlsx">Spreadsheet</option>
-          <option value=".pdf">PDF</option>
-        </select>
-      </div>
+      <section className="panel filter-panel">
+        <div className="panel-heading">
+          <h2>Pokedex scan</h2>
+          <span className="status-pill">Local sprite data</span>
+        </div>
+        <SearchBox value={query} onChange={setQuery} placeholder="Search species, type, or local source data" />
+        <div className="filter-bar">
+          <select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)} aria-label="Filter by type">
+            <option value="">All types</option>
+            {typeOptions.map((type) => <option value={type} key={type}>{type}</option>)}
+          </select>
+          <select value={confidenceFilter} onChange={(event) => setConfidenceFilter(event.target.value)} aria-label="Filter by confidence">
+            <option value="">All confidence</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value)} aria-label="Filter by source">
+            <option value="">All sources</option>
+            <option value="ER-nextdex-main.zip">NextDex</option>
+            <option value=".xlsx">Spreadsheet</option>
+            <option value=".pdf">PDF</option>
+          </select>
+        </div>
+      </section>
       {records.length === 0 ? <p className="empty">No species matched those filters. Clear a filter or rerun data generation if JSON is missing.</p> : null}
       {records.length > 0 ? <p className="list-caption">Showing {records.length} species card(s) from local generated data.</p> : null}
       <div className="species-grid">
@@ -308,6 +395,7 @@ function SpeciesCard({ species, onSelect }: { species: Species; onSelect?: () =>
   const primaryType = species.types[0] ?? "Normal";
   return (
     <button className="species-card" style={{ borderColor: typeColor(primaryType) }} onClick={onSelect} type="button">
+      <div className="species-card-glow" style={{ background: typeWash(primaryType) }} />
       <div className="species-art" style={{ background: typeWash(primaryType) }}>
         {species.spritePath ? <img src={species.spritePath} alt="" loading="lazy" /> : <span>{species.name.slice(0, 2).toUpperCase()}</span>}
       </div>
@@ -359,6 +447,7 @@ function SpeciesDetailView({ detail, onBack }: { detail: NonNullable<ReturnType<
       </button>
       <section className="detail-hero" style={{ background: typeColor(primaryType) }}>
         <div>
+          <span className="section-kicker detail-kicker">Species profile</span>
           <small>#{species.dexNumber ?? "?"}</small>
           <h2>{species.name}</h2>
           <div className="type-row">
@@ -505,7 +594,7 @@ function LocationsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildS
 function BuildsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
   const recommendation = detail.recommendation;
   return (
-    <section className="panel detail-panel">
+      <section className="panel detail-panel">
       <div className="panel-heading">
         <h2>Build Preview</h2>
         <ConfidenceBadge confidence={recommendation.confidence} />
@@ -527,7 +616,7 @@ function BuildsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpec
       {recommendation.moves.length ? (
         <div className="pill-list">{recommendation.moves.map((move) => <span className="soft-pill" key={move}>{move}</span>)}</div>
       ) : <p className="empty">No confirmed move options are available for this preview.</p>}
-      <p>{recommendation.reasoning}</p>
+      <p className="build-reasoning">{recommendation.reasoning}</p>
       <h3>Legality basis</h3>
       <ul className="tight-list">
         {recommendation.legality.basis.map((basis) => <li key={basis}>{basis}</li>)}
@@ -598,11 +687,18 @@ function SaveManagerPage({ save, onSaveLoaded }: { save?: ParsedSave; onSaveLoad
 
   return (
     <section className="content-stack">
-      <label className="drop-zone">
-        <FileSearch size={28} aria-hidden="true" />
-        <span>Choose a `.sav` or `.srm` file for local read-only analysis</span>
-        <input type="file" accept=".sav,.srm,application/octet-stream" onChange={(event) => onFile(event.target.files?.[0])} />
-      </label>
+      <section className="panel save-hero">
+        <div>
+          <span className="section-kicker">Save intake</span>
+          <h2>Read-only local inspection</h2>
+          <p>Load a local `.sav` or `.srm` file to inspect metadata, verify hashes, and export debug JSON without mutating a single byte.</p>
+        </div>
+        <label className="drop-zone">
+          <FileSearch size={28} aria-hidden="true" />
+          <span>Choose a `.sav` or `.srm` file for local read-only analysis</span>
+          <input type="file" accept=".sav,.srm,application/octet-stream" onChange={(event) => onFile(event.target.files?.[0])} />
+        </label>
+      </section>
       {error ? <p className="error">{error}</p> : null}
       {save ? (
         <section className="panel">
@@ -665,6 +761,18 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
   return (
     <section className="content-stack">
       <p className="notice">{usingMockTeam ? "Using mock owned Pokemon until real save party/PC parsing is fixture-confirmed. No Pokemon are created in saves and no save writing exists." : "Using parsed party data from the currently loaded local save. Party parsing is still provisional until fixture-backed offsets are confirmed."}</p>
+      <section className="panel team-hero">
+        <div>
+          <span className="section-kicker">Team operations</span>
+          <h2>Coverage and legality at a glance</h2>
+          <p>Use saved party data when available, otherwise stay in a clearly marked mock-owned preview until fixture-backed parsing is ready.</p>
+        </div>
+        <div className="hero-actions">
+          <span className="soft-pill">Deterministic recommender</span>
+          <span className="soft-pill">Confidence visible</span>
+          <span className="soft-pill">No invented legality</span>
+        </div>
+      </section>
       {currentSave ? (
         <section className="panel">
           <div className="panel-heading">
@@ -705,7 +813,7 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
       </section>
       <div className="record-list">
         {recommendations.map((recommendation) => (
-          <article className="record-row" key={recommendation.pokemonId}>
+          <article className="record-row recommendation-row" key={recommendation.pokemonId}>
             <div>
               <h3>{recommendation.speciesName}</h3>
               <p>{recommendation.role} - {recommendation.nature ?? "Nature uncertain"}</p>

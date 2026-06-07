@@ -2,6 +2,8 @@
 
 ## Working Features
 
+- Short cold-load boot animation for initial data load with a Dex scanner / local-sync feel.
+- Premium dark UI system using the Factory/Biosphere-inspired palette and mobile-first bottom navigation.
 - React + Vite local-first app shell with mobile-first bottom navigation for Home, Pokedex, Team, and Save plus utility-page chip navigation.
 - Searchable pages for Wiki, Pokedex, Moves, Abilities, Sub-Abilities, Items, Locations, and Trainers.
 - Pokedex cards display locally extracted NextDex sprites when generated assets exist.

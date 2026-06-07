@@ -100,6 +100,7 @@ The Save Manager accepts local `.sav`/`.srm` files and shows file name, file siz
 
 ## Current App UX
 
+- Short cinematic cold-load boot for initial local data sync and Dex activation.
 - Mobile-first shell with bottom primary navigation, utility page chips, and source/safety status capsules.
 - Mobile-first Pokedex with local sprites, type chips, confidence badges, filters, and empty-state guidance.
 - Species detail tabs: Overview, Stats, Learnset, Evolution, Locations, Builds, and Source, with provenance facts and source warnings.
