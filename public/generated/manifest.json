@@ -1,24 +1,23 @@
 {
   "gameVersion": "2.65.3b",
-  "generatedAt": "2026-06-07T10:54:09Z",
+  "generatedAt": "2026-06-07T11:37:51Z",
   "parserVersion": "0.1.0",
   "sources": [
     {
       "sourceFile": "ER-nextdex-main.zip",
       "parser": "extract_sources.py:nextdex-game-data",
       "recordCounts": {
-        "species": 1253,
-        "learnsets": 1253,
-        "evolutions": 581,
-        "moves": 739,
-        "abilities": 436,
-        "subabilities": 436
+        "species": 1906,
+        "learnsets": 1906,
+        "evolutions": 1035,
+        "moves": 1031,
+        "abilities": 1033,
+        "subabilities": 1033,
+        "items": 928,
+        "sprites": 1906
       },
-      "warnings": [
-        "Move names were not present in bundled NextDex JSON; generated move records preserve numeric IDs at low confidence.",
-        "Ability and sub-ability names were not present in bundled NextDex JSON; generated ability records preserve numeric IDs at low confidence."
-      ],
-      "confidence": "medium"
+      "warnings": [],
+      "confidence": "high"
     },
     {
       "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
@@ -39,6 +38,16 @@
       "confidence": "low"
     },
     {
+      "sourceFile": "ER-nextdex-main.zip",
+      "parser": "extract_sources.py:nextdex-static-locations-trainers",
+      "recordCounts": {
+        "locations": 175,
+        "trainers": 895
+      },
+      "warnings": [],
+      "confidence": "high"
+    },
+    {
       "sourceFile": "PDF docs",
       "parser": "extract_sources.py:parse-pdf-docs",
       "recordCounts": {
@@ -49,21 +58,18 @@
     }
   ],
   "totals": {
-    "species": 1253,
-    "learnsets": 1253,
-    "evolutions": 581,
-    "moves": 739,
-    "abilities": 436,
-    "subabilities": 436,
-    "items": 0,
-    "locations": 198,
-    "trainers": 795,
+    "species": 1906,
+    "learnsets": 1906,
+    "evolutions": 1035,
+    "moves": 1031,
+    "abilities": 1033,
+    "subabilities": 1033,
+    "items": 928,
+    "locations": 373,
+    "trainers": 1690,
     "mechanics": 7,
-    "search-index": 2253,
-    "warnings": 2
+    "search-index": 3976,
+    "warnings": 0
   },
-  "warnings": [
-    "Move names were not present in bundled NextDex JSON; generated move records preserve numeric IDs at low confidence.",
-    "Ability and sub-ability names were not present in bundled NextDex JSON; generated ability records preserve numeric IDs at low confidence."
-  ]
+  "warnings": []
 }

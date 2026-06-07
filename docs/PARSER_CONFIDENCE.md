@@ -2,21 +2,21 @@
 
 ## High
 
-None yet. No save offsets or game-data cross-references have been fixture-proven.
+- Named moves, abilities, items, species, trainer parties, map encounter data, and sprites extracted from `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` and `ER-nextdex-main/static/sprites`.
+- Data cross-validated by tests or multiple structured sources can also be promoted to high.
 
 ## Medium
 
-- Species identity, types, stats, descriptions, learnset buckets, and evolution references from `ER-nextdex-main/out/gameDataVVanilla.json`.
+- Source-derived relationships whose target labels are not fully resolved, such as evolution method kind IDs.
 - PDF wiki text extraction when text is present.
 
 ## Low
 
-- Move names, because the bundled NextDex JSON did not include move-name tables. Numeric move IDs are preserved.
-- Ability/sub-ability names, because the bundled NextDex JSON did not include ability-name tables. Numeric ability IDs are preserved.
 - Location rows from the earliest-location workbook until headers/columns are mapped per sheet.
 - Trainer rows from the trainer workbook until team columns are mapped per sheet.
 - Save metadata parser confidence beyond file size/hash/hex preview.
 - Recommender output when based on mock owned Pokemon or unresolved numeric references.
+- Any numeric ID or inferred value that cannot be resolved to a named source table.
 
 ## Rules
 

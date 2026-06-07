@@ -10,7 +10,7 @@
         "sourceFile": "Pokemon Elite Redux - (v2.65.3b) GBA Download.pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:07Z",
+        "extractedAt": "2026-06-07T11:37:48Z",
         "confidence": "medium",
         "notes": []
       }
@@ -27,7 +27,7 @@
         "sourceFile": "Pokemon Elite Redux - (v2.65.3b) GBA Game.pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:07Z",
+        "extractedAt": "2026-06-07T11:37:48Z",
         "confidence": "medium",
         "notes": []
       }
@@ -44,7 +44,7 @@
         "sourceFile": "Pokemon Elite Redux FAQ (1).pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:07Z",
+        "extractedAt": "2026-06-07T11:37:48Z",
         "confidence": "medium",
         "notes": []
       }
@@ -61,7 +61,7 @@
         "sourceFile": "Pokemon Elite Redux FAQ.pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:07Z",
+        "extractedAt": "2026-06-07T11:37:49Z",
         "confidence": "medium",
         "notes": []
       }
@@ -78,7 +78,7 @@
         "sourceFile": "Pokemon Elite Redux Full Changelog.pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:08Z",
+        "extractedAt": "2026-06-07T11:37:49Z",
         "confidence": "medium",
         "notes": []
       }
@@ -95,7 +95,7 @@
         "sourceFile": "Pokemon Elite Redux Full Features Explained.pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:08Z",
+        "extractedAt": "2026-06-07T11:37:49Z",
         "confidence": "medium",
         "notes": []
       }
@@ -112,7 +112,7 @@
         "sourceFile": "Pokemon Elite Redux Game Gallery.pdf",
         "parser": "extract_sources.py:parse-pdf-docs",
         "sourcePath": null,
-        "extractedAt": "2026-06-07T10:54:08Z",
+        "extractedAt": "2026-06-07T11:37:50Z",
         "confidence": "medium",
         "notes": []
       }

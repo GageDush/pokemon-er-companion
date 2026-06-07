@@ -20,8 +20,9 @@ import { SearchBox } from "../components/SearchBox";
 import { analyzeSaveFile, exportSaveDebugJson } from "../save/saveLoader";
 import { compareSaveBytes, SaveCompareResult } from "../save/saveCompare";
 import { searchDocuments } from "../search/searchIndex";
+import { analyzeDefensiveCoverage } from "../team-builder/coverage";
 import { recommendBuilds } from "../team-builder/recommender";
-import { ParsedSave, ParsedPokemon } from "../types";
+import { ParsedSave, ParsedPokemon, Species } from "../types";
 import { AppData, emptyData, loadAppData } from "./dataClient";
 
 type PageKey =
@@ -188,19 +189,48 @@ function PokedexPage({ data }: { data: AppData }) {
   const [query, setQuery] = useState("");
   const records = data.species
     .filter((species) => `${species.name} ${species.types.join(" ")}`.toLowerCase().includes(query.toLowerCase()))
-    .slice(0, 250)
-    .map((species) => ({
-      id: species.id,
-      title: species.name,
-      subtitle: species.types.join(" / ") || "Types unavailable",
-      confidence: species.confidence,
-      meta: species.baseStats ? `HP ${species.baseStats.hp} / Atk ${species.baseStats.attack} / Def ${species.baseStats.defense} / Spe ${species.baseStats.speed}` : "Stats unavailable"
-    }));
+    .slice(0, 120);
   return (
     <section className="content-stack">
       <SearchBox value={query} onChange={setQuery} placeholder="Search species and types" />
-      <RecordList records={records} emptyText="No species records loaded. Run data generation." />
+      {records.length === 0 ? <p className="empty">No species records loaded. Run data generation.</p> : null}
+      <div className="species-grid">
+        {records.map((species) => (
+          <SpeciesCard species={species} key={species.id} />
+        ))}
+      </div>
     </section>
+  );
+}
+
+function SpeciesCard({ species }: { species: Species }) {
+  const primaryType = species.types[0] ?? "Normal";
+  return (
+    <article className="species-card" style={{ borderColor: typeColor(primaryType) }}>
+      <div className="species-art" style={{ background: typeWash(primaryType) }}>
+        {species.spritePath ? <img src={species.spritePath} alt="" loading="lazy" /> : <span>{species.name.slice(0, 2).toUpperCase()}</span>}
+      </div>
+      <div className="species-body">
+        <div className="species-title">
+          <div>
+            <small>#{species.dexNumber ?? "?"}</small>
+            <h3>{species.name}</h3>
+          </div>
+          <ConfidenceBadge confidence={species.confidence} />
+        </div>
+        <div className="type-row">
+          {species.types.length ? species.types.map((type) => <span className="type-chip" style={{ background: typeColor(type) }} key={type}>{type}</span>) : <span className="type-chip muted">Unknown</span>}
+        </div>
+        {species.baseStats ? (
+          <div className="mini-stats">
+            <span>HP {species.baseStats.hp}</span>
+            <span>Atk {species.baseStats.attack}</span>
+            <span>SpA {species.baseStats.spAttack}</span>
+            <span>Spe {species.baseStats.speed}</span>
+          </div>
+        ) : null}
+      </div>
+    </article>
   );
 }
 
@@ -271,9 +301,29 @@ function TeamBuilderPage({ data }: { data: AppData }) {
     warnings: ["Mock owned Pokemon used until save party/PC offsets are confirmed."]
   }));
   const recommendations = recommendBuilds({ ownedPokemon: mockOwned, species: data.species, levelCap: 20, randomizerSuspected: true });
+  const teamSpecies = mockOwned
+    .map((owned) => data.species.find((species) => species.id === owned.speciesId))
+    .filter((species): species is Species => Boolean(species));
+  const coverage = analyzeDefensiveCoverage(teamSpecies);
   return (
     <section className="content-stack">
       <p className="notice">Using mock owned Pokemon until real save party/PC parsing is fixture-confirmed. No Pokemon are created in saves and no save writing exists.</p>
+      <section className="panel">
+        <h2>Defensive Coverage</h2>
+        <div className="coverage-grid">
+          {coverage.map((row) => (
+            <div className="coverage-row" key={row.type}>
+              <span className="type-chip" style={{ background: typeColor(row.type) }}>{row.type}</span>
+              <strong>{row.weak}</strong>
+              <small>weak</small>
+              <strong>{row.resist}</strong>
+              <small>resist</small>
+              <strong>{row.immune}</strong>
+              <small>immune</small>
+            </div>
+          ))}
+        </div>
+      </section>
       <div className="record-list">
         {recommendations.map((recommendation) => (
           <article className="record-row" key={recommendation.pokemonId}>
@@ -351,3 +401,32 @@ function downloadText(fileName: string, text: string) {
   link.click();
   URL.revokeObjectURL(url);
 }
+
+function typeColor(type: string): string {
+  return TYPE_COLORS[type] ?? "#6b7280";
+}
+
+function typeWash(type: string): string {
+  return `${typeColor(type)}24`;
+}
+
+const TYPE_COLORS: Record<string, string> = {
+  Normal: "#7c7f74",
+  Fire: "#d64f31",
+  Water: "#3478c7",
+  Grass: "#3f8f54",
+  Electric: "#c89b21",
+  Ice: "#50a8b7",
+  Fighting: "#a74438",
+  Poison: "#8b5ab6",
+  Ground: "#a8733d",
+  Flying: "#6d86c7",
+  Psychic: "#c24e7c",
+  Bug: "#7b9334",
+  Rock: "#8f7f4a",
+  Ghost: "#615496",
+  Dragon: "#5962b8",
+  Dark: "#4d433f",
+  Steel: "#687986",
+  Fairy: "#c76d9f"
+};

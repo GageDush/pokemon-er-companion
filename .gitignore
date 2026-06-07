@@ -37,7 +37,9 @@ data/raw/**/*.png
 
 # Keep generated normalized JSON/docs, but ignore bulky generated media by default
 public/generated/assets/
+public/generated/sprites/
 data/generated/assets/
+data/generated/sprites/
 
 # Tauri / Capacitor platform products
 src-tauri/target/

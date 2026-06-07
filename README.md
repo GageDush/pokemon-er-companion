@@ -83,12 +83,16 @@ Generated JSON is written to both:
 - `data/generated/` for source discipline and review
 - `public/generated/` for browser loading in Vite
 
-Known extraction limits:
+Known extraction notes:
 
-- NextDex bundled JSON contains species but not move/ability names.
-- Move and ability records are retained as low-confidence numeric references.
-- Trainer/location spreadsheet extraction is useful for search but low-confidence until column semantics are mapped more carefully.
+- `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` is the primary structured source for named species, moves, abilities, items, trainers, encounters, and references.
+- Local sprites are copied from `ER-nextdex-main/static/sprites` into `public/generated/sprites/` during data generation. This folder is ignored by Git.
+- Spreadsheet extraction is useful for supplemental search but remains low-confidence until column semantics are mapped more carefully.
 - `Elite Redux (2.65.3b).zip` contains a `.gba`; it is treated as read-only research input and is not redistributed.
+
+## Sprite Policy
+
+Sprites are extracted locally from the provided NextDex archive. The mobile app does not require users to upload the ROM/game file at runtime. For private/local builds, generated sprites may be bundled into the app package. For public distribution, bundled official/game sprites require rights/permission or must be replaced by a user-provided local sprite pack.
 
 ## Save Files
 

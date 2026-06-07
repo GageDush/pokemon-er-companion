@@ -78,6 +78,7 @@ export const SpeciesSchema = z.object({
   locationIds: z.array(z.string()).default([]),
   description: z.string().optional(),
   spriteKey: z.string().optional(),
+  spritePath: z.string().optional(),
   confidence: ConfidenceSchema,
   source: provenanceArray
 });
