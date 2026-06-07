@@ -1,8 +1,9 @@
-import { BuildRecommendation, ParsedPokemon, Species } from "../types";
+import { BuildRecommendation, Learnset, ParsedPokemon, Species } from "../types";
 
 export interface RecommendationContext {
   ownedPokemon: ParsedPokemon[];
   species: Species[];
+  learnsets?: Learnset[];
   levelCap?: number;
   randomizerSuspected?: boolean;
 }
@@ -14,7 +15,7 @@ export function recommendBuilds(context: RecommendationContext): BuildRecommenda
     const species = pokemon.speciesId
       ? context.species.find((record) => record.id === pokemon.speciesId)
       : speciesByName.get(pokemon.speciesName.toLowerCase());
-    const sourceMoves = species ? collectKnownMoves(species) : [];
+    const sourceMoves = species ? collectKnownMoves(species, context.learnsets, context.levelCap) : [];
     const saveMoves = pokemon.moves;
     const moves = unique([...saveMoves, ...sourceMoves]).slice(0, 4);
     const warnings: string[] = [];
@@ -55,9 +56,13 @@ export function recommendBuilds(context: RecommendationContext): BuildRecommenda
   });
 }
 
-function collectKnownMoves(species: Species): string[] {
+function collectKnownMoves(species: Species, learnsets: Learnset[] = [], levelCap?: number): string[] {
   if (!species.learnsetId) return [];
-  return [];
+  const learnset = learnsets.find((record) => record.id === species.learnsetId || record.speciesId === species.id);
+  if (!learnset) return [];
+  const levelUp = learnset.levelUp.filter((move) => move.confidence === "high" && (levelCap === undefined || (move.level ?? 0) <= levelCap));
+  const other = [...learnset.tmhm, ...learnset.tutor, ...learnset.egg].filter((move) => move.confidence === "high");
+  return [...levelUp, ...other].map((move) => move.name);
 }
 
 function inferRole(species?: Species): string {

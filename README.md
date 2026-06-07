@@ -97,3 +97,14 @@ Sprites are extracted locally from the provided NextDex archive. The mobile app 
 ## Save Files
 
 The Save Manager accepts local `.sav`/`.srm` files and shows file name, file size, likely format, SHA-256, first 256 bytes as hex preview, and debug JSON export. Party/PC parsing remains disabled/low-confidence until clean and played save fixtures prove offsets and checksums.
+
+## Current App UX
+
+- Mobile-first Pokedex with local sprites, type chips, confidence badges, and filters.
+- Species detail tabs: Overview, Stats, Learnset, Evolution, Locations, Builds, and Source.
+- Team Builder preview with local sprites, defensive coverage, and advanced legality details.
+- Save and Debug screens stay read-only and local.
+
+## Save Fixture Research
+
+See `docs/SAVE_FIXTURE_RESEARCH.md`. Emulator-created milestone saves can help prove party/PC/progression offsets, but emulator setup is optional and should be approved first. The emulator is not a bulk game-data source; structured NextDex/source files remain the source of truth.

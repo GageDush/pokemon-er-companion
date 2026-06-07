@@ -38,3 +38,5 @@ If it is not proven, label it candidate or unknown.
 ## Current Implementation Boundary
 
 Party, PC, progression, randomizer settings, and checksums are not parsed yet. They remain blocked on clean/played save fixtures and documented offset evidence.
+
+See `docs/SAVE_FIXTURE_RESEARCH.md` for the fixture plan.

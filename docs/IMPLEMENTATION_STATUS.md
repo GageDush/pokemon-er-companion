@@ -5,9 +5,12 @@
 - React + Vite local-first app shell with mobile-first bottom navigation.
 - Searchable pages for Wiki, Pokedex, Moves, Abilities, Sub-Abilities, Items, Locations, and Trainers.
 - Pokedex cards display locally extracted NextDex sprites when generated assets exist.
+- Species detail view with Overview, Stats, Learnset, Evolution, Locations, Builds, and Source tabs.
+- Pokedex filters for type, confidence, and source.
 - Read-only save metadata loader: file size, likely format, SHA-256, hex preview, debug JSON export.
 - Read-only save byte comparison.
 - Team Builder mock-owned flow with defensive coverage analysis and legality warnings.
+- Team Builder owned preview uses sprites and an advanced legality toggle.
 - Tauri v2 and Capacitor configuration files.
 
 ## Generated Data
@@ -36,7 +39,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 
 ## Needs Deeper Extraction
 
-- Evolution method labels are still source-derived numeric/kind references and need enum mapping.
+- Evolution method labels are visible in detail pages but still source-derived numeric/kind references and need enum mapping.
 - Spreadsheet workbook columns need per-sheet semantic mapping.
 - Trainer levels are absent from some structured trainer records and need source-table verification.
 - ROM extraction remains verification-only until table layouts are proven.
@@ -53,6 +56,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 - Party, PC, progression, badges, level cap, randomizer settings, and checksums are not parsed.
 - Save writing is disabled.
 - Fixture instructions exist in `test/fixtures/saves/README.md`.
+- Fixture research plan exists in `docs/SAVE_FIXTURE_RESEARCH.md`.
 
 ## Packaging Blockers
 
@@ -62,7 +66,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 
 ## Exact Next Tasks
 
-1. Add species detail screens with tabs for Overview, Stats, Learnset, Evolution, Locations, Builds, and Source.
-2. Map evolution kind enums and source trainer level fields from structured files.
-3. Provide clean/played save fixtures and start offset comparison research.
-4. Add Playwright UI smoke tests if browser automation dependencies are approved and stable.
+1. Map evolution kind enums and source trainer level fields from structured files.
+2. Provide clean/played save fixtures and start offset comparison research.
+3. Add Playwright UI smoke tests if browser automation dependencies are approved and stable.
+4. Add persistent local tags/favorites outside save files.

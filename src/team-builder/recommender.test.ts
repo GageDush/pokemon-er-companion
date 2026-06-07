@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { recommendBuilds } from "./recommender";
-import { ParsedPokemon, Species } from "../types";
+import { Learnset, ParsedPokemon, Species } from "../types";
 
 const bulbasaur: Species = {
   id: "species-bulbasaur",
@@ -49,5 +49,33 @@ describe("recommendBuilds", () => {
     const [recommendation] = recommendBuilds({ ownedPokemon: [owned], species: [bulbasaur] });
     expect(recommendation.moves).toEqual(["Tackle"]);
     expect(recommendation.legality.basis).toContain("Current save move list");
+  });
+
+  it("uses high-confidence named parsed learnset moves when provided", () => {
+    const owned: ParsedPokemon = {
+      id: "owned-1",
+      source: "mock",
+      speciesId: "species-bulbasaur",
+      speciesName: "Bulbasaur",
+      moves: [],
+      subAbilities: [],
+      confidence: "medium",
+      warnings: []
+    };
+    const learnset: Learnset = {
+      id: "learnset-species-bulbasaur",
+      speciesId: "species-bulbasaur",
+      levelUp: [
+        { id: "move-33", name: "Tackle", learnMethod: "level-up", level: 1, confidence: "high" },
+        { id: "move-999", name: "Too Late", learnMethod: "level-up", level: 99, confidence: "high" }
+      ],
+      tmhm: [],
+      tutor: [{ id: "move-188", name: "Sludge Bomb", learnMethod: "tutor", confidence: "high" }],
+      egg: [],
+      source: []
+    };
+    const [recommendation] = recommendBuilds({ ownedPokemon: [owned], species: [bulbasaur], learnsets: [learnset], levelCap: 20 });
+    expect(recommendation.moves).toEqual(["Tackle", "Sludge Bomb"]);
+    expect(recommendation.legality.status).toBe("confirmed");
   });
 });

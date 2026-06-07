@@ -1,5 +1,6 @@
 import {
   Activity,
+  ArrowLeft,
   BookOpen,
   Bug,
   Cog,
@@ -17,6 +18,8 @@ import { useEffect, useMemo, useState } from "react";
 import { ConfidenceBadge } from "../components/ConfidenceBadge";
 import { RecordList } from "../components/RecordList";
 import { SearchBox } from "../components/SearchBox";
+import { buildSpeciesDetailData } from "../dex/speciesDetail";
+import { typeColor, typeWash } from "../dex/typeColors";
 import { analyzeSaveFile, exportSaveDebugJson } from "../save/saveLoader";
 import { compareSaveBytes, SaveCompareResult } from "../save/saveCompare";
 import { searchDocuments } from "../search/searchIndex";
@@ -187,26 +190,66 @@ function WikiPage({ data }: { data: AppData }) {
 
 function PokedexPage({ data }: { data: AppData }) {
   const [query, setQuery] = useState("");
+  const [selectedSpeciesId, setSelectedSpeciesId] = useState<string | undefined>();
+  const [typeFilter, setTypeFilter] = useState("");
+  const [confidenceFilter, setConfidenceFilter] = useState("");
+  const [sourceFilter, setSourceFilter] = useState("");
+  const typeOptions = useMemo(() => Array.from(new Set(data.species.flatMap((species) => species.types))).sort(), [data.species]);
+  const detail = selectedSpeciesId
+    ? buildSpeciesDetailData({
+        speciesId: selectedSpeciesId,
+        species: data.species,
+        learnsets: data.learnsets,
+        evolutions: data.evolutions,
+        locations: data.locations
+      })
+    : undefined;
+
+  if (detail) {
+    return <SpeciesDetailView detail={detail} onBack={() => setSelectedSpeciesId(undefined)} />;
+  }
+
   const records = data.species
     .filter((species) => `${species.name} ${species.types.join(" ")}`.toLowerCase().includes(query.toLowerCase()))
+    .filter((species) => !typeFilter || species.types.includes(typeFilter))
+    .filter((species) => !confidenceFilter || species.confidence === confidenceFilter)
+    .filter((species) => !sourceFilter || species.source.some((source) => source.sourceFile.includes(sourceFilter) || source.sourcePath?.includes(sourceFilter)))
     .slice(0, 120);
   return (
     <section className="content-stack">
       <SearchBox value={query} onChange={setQuery} placeholder="Search species and types" />
+      <div className="filter-bar">
+        <select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value)} aria-label="Filter by type">
+          <option value="">All types</option>
+          {typeOptions.map((type) => <option value={type} key={type}>{type}</option>)}
+        </select>
+        <select value={confidenceFilter} onChange={(event) => setConfidenceFilter(event.target.value)} aria-label="Filter by confidence">
+          <option value="">All confidence</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value)} aria-label="Filter by source">
+          <option value="">All sources</option>
+          <option value="ER-nextdex-main.zip">NextDex</option>
+          <option value=".xlsx">Spreadsheet</option>
+          <option value=".pdf">PDF</option>
+        </select>
+      </div>
       {records.length === 0 ? <p className="empty">No species records loaded. Run data generation.</p> : null}
       <div className="species-grid">
         {records.map((species) => (
-          <SpeciesCard species={species} key={species.id} />
+          <SpeciesCard species={species} key={species.id} onSelect={() => setSelectedSpeciesId(species.id)} />
         ))}
       </div>
     </section>
   );
 }
 
-function SpeciesCard({ species }: { species: Species }) {
+function SpeciesCard({ species, onSelect }: { species: Species; onSelect?: () => void }) {
   const primaryType = species.types[0] ?? "Normal";
   return (
-    <article className="species-card" style={{ borderColor: typeColor(primaryType) }}>
+    <button className="species-card" style={{ borderColor: typeColor(primaryType) }} onClick={onSelect} type="button">
       <div className="species-art" style={{ background: typeWash(primaryType) }}>
         {species.spritePath ? <img src={species.spritePath} alt="" loading="lazy" /> : <span>{species.name.slice(0, 2).toUpperCase()}</span>}
       </div>
@@ -230,7 +273,220 @@ function SpeciesCard({ species }: { species: Species }) {
           </div>
         ) : null}
       </div>
-    </article>
+    </button>
+  );
+}
+
+type DetailTab = "overview" | "stats" | "learnset" | "evolution" | "locations" | "builds" | "source";
+
+function SpeciesDetailView({ detail, onBack }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>>; onBack: () => void }) {
+  const [tab, setTab] = useState<DetailTab>("overview");
+  const species = detail.species;
+  const primaryType = species.types[0] ?? "Normal";
+  const tabLabels: Array<[DetailTab, string]> = [
+    ["overview", "Overview"],
+    ["stats", "Stats"],
+    ["learnset", "Learnset"],
+    ["evolution", "Evolution"],
+    ["locations", "Locations"],
+    ["builds", "Builds"],
+    ["source", "Source"]
+  ];
+
+  return (
+    <section className="content-stack detail-shell">
+      <button className="ghost-action" type="button" onClick={onBack}>
+        <ArrowLeft size={17} aria-hidden="true" />
+        Pokedex
+      </button>
+      <section className="detail-hero" style={{ background: typeColor(primaryType) }}>
+        <div>
+          <small>#{species.dexNumber ?? "?"}</small>
+          <h2>{species.name}</h2>
+          <div className="type-row">
+            {species.types.map((type) => <span className="type-chip detail-chip" style={{ background: "rgba(255,255,255,0.22)" }} key={type}>{type}</span>)}
+          </div>
+        </div>
+        <div className="detail-sprite">
+          {species.spritePath ? <img src={species.spritePath} alt="" /> : <span>{species.name.slice(0, 2).toUpperCase()}</span>}
+        </div>
+      </section>
+      <div className="tab-strip" role="tablist" aria-label={`${species.name} detail tabs`}>
+        {tabLabels.map(([key, label]) => (
+          <button className={tab === key ? "active" : ""} key={key} type="button" onClick={() => setTab(key)}>
+            {label}
+          </button>
+        ))}
+      </div>
+      {tab === "overview" ? <OverviewTab detail={detail} /> : null}
+      {tab === "stats" ? <StatsTab detail={detail} /> : null}
+      {tab === "learnset" ? <LearnsetTab detail={detail} /> : null}
+      {tab === "evolution" ? <EvolutionTab detail={detail} /> : null}
+      {tab === "locations" ? <LocationsTab detail={detail} /> : null}
+      {tab === "builds" ? <BuildsTab detail={detail} /> : null}
+      {tab === "source" ? <SourceTab detail={detail} /> : null}
+    </section>
+  );
+}
+
+function OverviewTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  const species = detail.species;
+  return (
+    <section className="panel detail-panel">
+      <div className="panel-heading">
+        <h2>Overview</h2>
+        <ConfidenceBadge confidence={species.confidence} />
+      </div>
+      <p>{species.description || "No description was extracted for this form."}</p>
+      <div className="detail-columns">
+        <div>
+          <h3>Main Abilities</h3>
+          <div className="pill-list">
+            {species.abilities.map((ability) => <span className="soft-pill" key={ability.id}>{ability.name}</span>)}
+          </div>
+        </div>
+        <div>
+          <h3>Sub-Abilities</h3>
+          <div className="pill-list">
+            {species.subAbilities.map((ability) => <span className="soft-pill" key={ability.id}>{ability.name}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  return (
+    <section className="panel detail-panel">
+      <div className="panel-heading">
+        <h2>Base Stats</h2>
+        {detail.statTotal ? <span className="status-pill">BST {detail.statTotal}</span> : null}
+      </div>
+      {detail.statRows.length === 0 ? <p className="empty">Stats were not available in generated data.</p> : null}
+      <div className="stat-list">
+        {detail.statRows.map((row) => (
+          <div className="stat-row" key={row.key}>
+            <span>{row.label}</span>
+            <div className="stat-track"><div style={{ width: `${row.percent}%` }} /></div>
+            <strong>{row.value}</strong>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LearnsetTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  return (
+    <section className="content-stack">
+      {detail.groupedLearnset.length === 0 ? <p className="empty">No learnset records were generated for this species.</p> : null}
+      {detail.groupedLearnset.map((group) => (
+        <section className="panel detail-panel" key={group.label}>
+          <h2>{group.label}</h2>
+          <div className="move-list">
+            {group.moves.slice(0, 80).map((move) => (
+              <div className="move-row" key={`${group.label}-${move.id}-${move.level ?? "x"}`}>
+                <span>{move.level !== undefined ? `Lv ${move.level}` : group.label}</span>
+                <strong>{move.name}</strong>
+                <ConfidenceBadge confidence={move.confidence} />
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </section>
+  );
+}
+
+function EvolutionTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  return (
+    <section className="panel detail-panel">
+      <h2>Evolution</h2>
+      {detail.evolutions.length === 0 ? <p className="empty">No evolution records were generated for this species.</p> : null}
+      <div className="record-list">
+        {detail.evolutions.map((evolution) => (
+          <article className="record-row" key={evolution.id}>
+            <div>
+              <h3>{evolution.fromSpeciesId} {"->"} {evolution.toSpeciesName ?? evolution.toSpeciesId ?? "Unknown"}</h3>
+              <p>{evolution.method}{evolution.condition ? ` - ${evolution.condition}` : ""}</p>
+              <small>Method labels still need enum mapping where shown as raw `kind:*` values.</small>
+            </div>
+            <ConfidenceBadge confidence={evolution.confidence} />
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LocationsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  return (
+    <section className="panel detail-panel">
+      <h2>Locations</h2>
+      {detail.locations.length === 0 ? <p className="empty">No generated encounter/location record currently references this species.</p> : null}
+      <div className="record-list">
+        {detail.locations.map((location) => (
+          <article className="record-row" key={location.id}>
+            <div>
+              <h3>{location.name}</h3>
+              <p>{location.matchingEncounters.slice(0, 5).map((encounter) => `${encounter.method ?? "encounter"} ${encounter.notes ?? ""}`.trim()).join(" | ")}</p>
+            </div>
+            <ConfidenceBadge confidence={location.confidence} />
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function BuildsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  const recommendation = detail.recommendation;
+  return (
+    <section className="panel detail-panel">
+      <div className="panel-heading">
+        <h2>Build Preview</h2>
+        <ConfidenceBadge confidence={recommendation.confidence} />
+      </div>
+      <dl className="facts">
+        <div><dt>Role</dt><dd>{recommendation.role}</dd></div>
+        <div><dt>Nature</dt><dd>{recommendation.nature ?? "Uncertain"}</dd></div>
+        <div><dt>Legality</dt><dd>{recommendation.legality.status}</dd></div>
+      </dl>
+      {recommendation.moves.length ? (
+        <div className="pill-list">{recommendation.moves.map((move) => <span className="soft-pill" key={move}>{move}</span>)}</div>
+      ) : <p className="empty">No confirmed move options are available for this preview.</p>}
+      <p>{recommendation.reasoning}</p>
+      <h3>Legality basis</h3>
+      <ul className="tight-list">
+        {recommendation.legality.basis.map((basis) => <li key={basis}>{basis}</li>)}
+        {recommendation.legality.warnings.map((warning) => <li key={warning}>{warning}</li>)}
+      </ul>
+    </section>
+  );
+}
+
+function SourceTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpeciesDetailData>> }) {
+  return (
+    <section className="panel detail-panel">
+      <div className="panel-heading">
+        <h2>Source</h2>
+        <ConfidenceBadge confidence={detail.species.confidence} />
+      </div>
+      <div className="record-list">
+        {detail.species.source.map((source) => (
+          <article className="record-row" key={`${source.sourceFile}-${source.parser}-${source.sourcePath ?? ""}`}>
+            <div>
+              <h3>{source.sourceFile}</h3>
+              <p>{source.parser}</p>
+              <small>{source.sourcePath ?? "No source path recorded"}</small>
+            </div>
+            <ConfidenceBadge confidence={source.confidence} />
+          </article>
+        ))}
+      </div>
+      <p className="notice">Sprites are bundled from local generated assets for private/mobile builds. Public releases need rights/permission or user-provided sprite packs.</p>
+    </section>
   );
 }
 
@@ -288,6 +544,7 @@ function SaveManagerPage() {
 }
 
 function TeamBuilderPage({ data }: { data: AppData }) {
+  const [advanced, setAdvanced] = useState(false);
   const mockOwned: ParsedPokemon[] = data.species.slice(0, 6).map((species, index) => ({
     id: `mock-${species.id}`,
     source: "mock",
@@ -300,7 +557,7 @@ function TeamBuilderPage({ data }: { data: AppData }) {
     confidence: "low",
     warnings: ["Mock owned Pokemon used until save party/PC offsets are confirmed."]
   }));
-  const recommendations = recommendBuilds({ ownedPokemon: mockOwned, species: data.species, levelCap: 20, randomizerSuspected: true });
+  const recommendations = recommendBuilds({ ownedPokemon: mockOwned, species: data.species, learnsets: data.learnsets, levelCap: 20, randomizerSuspected: true });
   const teamSpecies = mockOwned
     .map((owned) => data.species.find((species) => species.id === owned.speciesId))
     .filter((species): species is Species => Boolean(species));
@@ -308,6 +565,15 @@ function TeamBuilderPage({ data }: { data: AppData }) {
   return (
     <section className="content-stack">
       <p className="notice">Using mock owned Pokemon until real save party/PC parsing is fixture-confirmed. No Pokemon are created in saves and no save writing exists.</p>
+      <div className="panel-heading">
+        <h2>Owned Preview</h2>
+        <button className="primary secondary" type="button" onClick={() => setAdvanced((value) => !value)}>{advanced ? "Simple" : "Advanced"}</button>
+      </div>
+      <div className="team-roster">
+        {teamSpecies.map((species) => (
+          <SpeciesCard species={species} key={species.id} />
+        ))}
+      </div>
       <section className="panel">
         <h2>Defensive Coverage</h2>
         <div className="coverage-grid">
@@ -329,9 +595,16 @@ function TeamBuilderPage({ data }: { data: AppData }) {
           <article className="record-row" key={recommendation.pokemonId}>
             <div>
               <h3>{recommendation.speciesName}</h3>
-              <p>{recommendation.role} · {recommendation.nature ?? "Nature uncertain"}</p>
+              <p>{recommendation.role} - {recommendation.nature ?? "Nature uncertain"}</p>
+              {recommendation.moves.length ? <small>Moves: {recommendation.moves.join(", ")}</small> : null}
               <small>{recommendation.reasoning}</small>
-              {recommendation.legality.warnings.length ? <small>{recommendation.legality.warnings.join(" ")}</small> : null}
+              {advanced ? (
+                <>
+                  <small>Legality: {recommendation.legality.status}</small>
+                  {recommendation.legality.basis.length ? <small>Basis: {recommendation.legality.basis.join("; ")}</small> : null}
+                  {recommendation.legality.warnings.length ? <small>Warnings: {recommendation.legality.warnings.join(" ")}</small> : null}
+                </>
+              ) : recommendation.legality.warnings.length ? <small>{recommendation.legality.warnings.join(" ")}</small> : null}
             </div>
             <ConfidenceBadge confidence={recommendation.confidence} />
           </article>
@@ -401,32 +674,3 @@ function downloadText(fileName: string, text: string) {
   link.click();
   URL.revokeObjectURL(url);
 }
-
-function typeColor(type: string): string {
-  return TYPE_COLORS[type] ?? "#6b7280";
-}
-
-function typeWash(type: string): string {
-  return `${typeColor(type)}24`;
-}
-
-const TYPE_COLORS: Record<string, string> = {
-  Normal: "#7c7f74",
-  Fire: "#d64f31",
-  Water: "#3478c7",
-  Grass: "#3f8f54",
-  Electric: "#c89b21",
-  Ice: "#50a8b7",
-  Fighting: "#a74438",
-  Poison: "#8b5ab6",
-  Ground: "#a8733d",
-  Flying: "#6d86c7",
-  Psychic: "#c24e7c",
-  Bug: "#7b9334",
-  Rock: "#8f7f4a",
-  Ghost: "#615496",
-  Dragon: "#5962b8",
-  Dark: "#4d433f",
-  Steel: "#687986",
-  Fairy: "#c76d9f"
-};

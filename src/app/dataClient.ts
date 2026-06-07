@@ -2,8 +2,10 @@ import {
   Ability,
   GeneratedManifest,
   Item,
+  Learnset,
   Location,
   Move,
+  Evolution,
   SearchDocument,
   Species,
   Trainer
@@ -12,6 +14,8 @@ import {
 export interface AppData {
   manifest?: GeneratedManifest;
   species: Species[];
+  learnsets: Learnset[];
+  evolutions: Evolution[];
   moves: Move[];
   abilities: Ability[];
   subabilities: Ability[];
@@ -25,6 +29,8 @@ export interface AppData {
 
 export const emptyData: AppData = {
   species: [],
+  learnsets: [],
+  evolutions: [],
   moves: [],
   abilities: [],
   subabilities: [],
@@ -47,10 +53,12 @@ async function loadJson<T>(name: string, fallback: T): Promise<T> {
 }
 
 export async function loadAppData(): Promise<AppData> {
-  const [manifest, species, moves, abilities, subabilities, items, locations, trainers, wiki, searchIndex, warnings] =
+  const [manifest, species, learnsets, evolutions, moves, abilities, subabilities, items, locations, trainers, wiki, searchIndex, warnings] =
     await Promise.all([
       loadJson<GeneratedManifest | undefined>("manifest.json", undefined),
       loadJson<Species[]>("species.json", []),
+      loadJson<Learnset[]>("learnsets.json", []),
+      loadJson<Evolution[]>("evolutions.json", []),
       loadJson<Move[]>("moves.json", []),
       loadJson<Ability[]>("abilities.json", []),
       loadJson<Ability[]>("subabilities.json", []),
@@ -65,6 +73,8 @@ export async function loadAppData(): Promise<AppData> {
   return {
     manifest,
     species,
+    learnsets,
+    evolutions,
     moves,
     abilities,
     subabilities,
