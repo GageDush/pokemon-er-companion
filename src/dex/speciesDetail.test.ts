@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildSpeciesDetailData, groupLearnset } from "./speciesDetail";
+import { buildSpeciesDetailData, groupLearnset, humanizeEvolutionMethod } from "./speciesDetail";
 import { Evolution, Learnset, Location, Species } from "../types";
 
 const bulbasaur: Species = {
@@ -63,6 +63,11 @@ describe("species detail helpers", () => {
     expect(groupLearnset(learnset).map((group) => group.label)).toEqual(["Level-up", "Tutor"]);
   });
 
+  it("formats evolution method labels without guessing unmapped numeric enums", () => {
+    expect(humanizeEvolutionMethod("EVO_MEGA_EVOLUTION")).toBe("Mega Evolution");
+    expect(humanizeEvolutionMethod("kind:0")).toBe("Raw evolution kind 0");
+  });
+
   it("builds a detail model with stats, evolutions, locations, and recommendations", () => {
     const detail = buildSpeciesDetailData({
       speciesId: "species-bulbasaur",
@@ -73,8 +78,11 @@ describe("species detail helpers", () => {
     });
 
     expect(detail?.statTotal).toBe(320);
-    expect(detail?.evolutions[0].toSpeciesName).toBe("Ivysaur");
+    expect(detail?.evolutions[0].record.toSpeciesName).toBe("Ivysaur");
+    expect(detail?.evolutions[0].methodLabel).toBe("Raw evolution kind 0");
     expect(detail?.locations[0].matchingEncounters[0].speciesName).toBe("Bulbasaur");
+    expect(detail?.locations[0].methods).toEqual(["Land"]);
+    expect(detail?.sourceWarnings[0]).toContain("Evolution method enum names");
     expect(detail?.recommendation.moves).toContain("Tackle");
   });
 });

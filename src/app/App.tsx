@@ -62,6 +62,7 @@ const NAV: Array<{ key: PageKey; label: string; icon: typeof Home }> = [
 export function App() {
   const [page, setPage] = useState<PageKey>("home");
   const [data, setData] = useState<AppData>(emptyData);
+  const [currentSave, setCurrentSave] = useState<ParsedSave | undefined>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -72,6 +73,8 @@ export function App() {
   }, []);
 
   const totals = data.manifest?.totals;
+  const primaryNav = NAV.filter((item) => ["home", "pokedex", "team", "save"].includes(item.key));
+  const utilityNav = NAV.filter((item) => !["home", "pokedex", "team", "save"].includes(item.key));
 
   return (
     <div className="shell">
@@ -100,19 +103,53 @@ export function App() {
           <div>
             <p className="eyebrow">Local-first read-only vertical slice</p>
             <h1>{NAV.find((item) => item.key === page)?.label}</h1>
+            <div className="capability-row">
+              <span className="capsule capsule-blue">iPhone-first</span>
+              <span className="capsule capsule-green">Local-first</span>
+              <span className="capsule capsule-red">Read-only saves</span>
+              <span className="capsule capsule-purple">Source confidence</span>
+            </div>
           </div>
           <div className="status-pill">{loading ? "Loading data" : `${totals?.species ?? data.species.length} species`}</div>
         </header>
-        <Page page={page} data={data} />
+        <div className="utility-nav" aria-label="Utility pages">
+          {utilityNav.map((item) => (
+            <button className={page === item.key ? "active" : ""} key={item.key} onClick={() => setPage(item.key)} type="button">
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <Page page={page} data={data} currentSave={currentSave} onSaveLoaded={setCurrentSave} />
       </main>
+      <nav className="mobile-primary-nav" aria-label="Primary mobile navigation">
+        {primaryNav.map((item) => {
+          const Icon = item.icon;
+          return (
+            <button className={page === item.key ? "active" : ""} key={item.key} onClick={() => setPage(item.key)} type="button">
+              <Icon size={18} aria-hidden="true" />
+              <span>{item.label.replace(" Manager", "").replace(" Builder", "")}</span>
+            </button>
+          );
+        })}
+      </nav>
     </div>
   );
 }
 
-function Page({ page, data }: { page: PageKey; data: AppData }) {
+function Page({
+  page,
+  data,
+  currentSave,
+  onSaveLoaded
+}: {
+  page: PageKey;
+  data: AppData;
+  currentSave?: ParsedSave;
+  onSaveLoaded: (save: ParsedSave | undefined) => void;
+}) {
   switch (page) {
     case "home":
-      return <HomePage data={data} />;
+      return <HomePage data={data} currentSave={currentSave} />;
     case "wiki":
       return <WikiPage data={data} />;
     case "pokedex":
@@ -130,9 +167,9 @@ function Page({ page, data }: { page: PageKey; data: AppData }) {
     case "trainers":
       return <SimpleDataPage title="Trainers" records={data.trainers.map((trainer) => ({ id: trainer.id, title: trainer.name, subtitle: trainer.location, confidence: trainer.confidence, meta: trainer.notes[0] }))} />;
     case "save":
-      return <SaveManagerPage />;
+      return <SaveManagerPage save={currentSave} onSaveLoaded={onSaveLoaded} />;
     case "team":
-      return <TeamBuilderPage data={data} />;
+      return <TeamBuilderPage data={data} currentSave={currentSave} />;
     case "debug":
       return <DebugComparePage />;
     case "settings":
@@ -140,7 +177,7 @@ function Page({ page, data }: { page: PageKey; data: AppData }) {
   }
 }
 
-function HomePage({ data }: { data: AppData }) {
+function HomePage({ data, currentSave }: { data: AppData; currentSave?: ParsedSave }) {
   const cards = [
     ["Species", data.species.length],
     ["Moves", data.moves.length],
@@ -152,8 +189,13 @@ function HomePage({ data }: { data: AppData }) {
   return (
     <section className="content-stack">
       <div className="hero-band">
-        <h2>Source-tracked wiki, save metadata, and legal build guardrails for Pokemon Elite Redux.</h2>
-        <p>Core workflows run locally. Save parsing is read-only, and recommendations stay constrained to parsed data or current save observations.</p>
+        <h2>Mobile-first Elite Redux companion with bundled local sprites, source confidence, and read-only save research.</h2>
+        <p>Core workflows run locally. Save parsing stays read-only, and build guidance remains constrained to parsed source data or current save observations.</p>
+        <div className="hero-actions">
+          <span className="soft-pill">No phone-side ROM upload</span>
+          <span className="soft-pill">Private/local sprite bundling</span>
+          <span className="soft-pill">Legality warnings stay visible</span>
+        </div>
       </div>
       <div className="metric-grid">
         {cards.map(([label, value]) => (
@@ -163,6 +205,21 @@ function HomePage({ data }: { data: AppData }) {
           </div>
         ))}
       </div>
+      <section className="panel">
+        <div className="panel-heading">
+          <h2>Read-only save status</h2>
+          <span className="status-pill">{currentSave ? "Loaded" : "Awaiting fixture-backed save"}</span>
+        </div>
+        {currentSave ? (
+          <dl className="facts">
+            <div><dt>File</dt><dd>{currentSave.metadata.fileName}</dd></div>
+            <div><dt>Format</dt><dd>{currentSave.metadata.likelyFormat}</dd></div>
+            <div><dt>Party parsed</dt><dd>{currentSave.party.length > 0 ? `${currentSave.party.length} slot(s)` : "Not yet confirmed"}</dd></div>
+          </dl>
+        ) : (
+          <p className="notice">Load a local save in Save Manager to capture metadata, hash, and debug output. Party and PC views remain disabled until fixture-backed offsets are proven.</p>
+        )}
+      </section>
       {data.warnings.length > 0 ? (
         <section className="panel">
           <h2>Data Warnings</h2>
@@ -236,7 +293,8 @@ function PokedexPage({ data }: { data: AppData }) {
           <option value=".pdf">PDF</option>
         </select>
       </div>
-      {records.length === 0 ? <p className="empty">No species records loaded. Run data generation.</p> : null}
+      {records.length === 0 ? <p className="empty">No species matched those filters. Clear a filter or rerun data generation if JSON is missing.</p> : null}
+      {records.length > 0 ? <p className="list-caption">Showing {records.length} species card(s) from local generated data.</p> : null}
       <div className="species-grid">
         {records.map((species) => (
           <SpeciesCard species={species} key={species.id} onSelect={() => setSelectedSpeciesId(species.id)} />
@@ -306,6 +364,10 @@ function SpeciesDetailView({ detail, onBack }: { detail: NonNullable<ReturnType<
           <div className="type-row">
             {species.types.map((type) => <span className="type-chip detail-chip" style={{ background: "rgba(255,255,255,0.22)" }} key={type}>{type}</span>)}
           </div>
+          <div className="hero-meta">
+            <ConfidenceBadge confidence={species.confidence} />
+            <span className="hero-meta-text">{detail.sourceFacts[1]?.value ?? "No source file recorded"}</span>
+          </div>
         </div>
         <div className="detail-sprite">
           {species.spritePath ? <img src={species.spritePath} alt="" /> : <span>{species.name.slice(0, 2).toUpperCase()}</span>}
@@ -341,15 +403,11 @@ function OverviewTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSp
       <div className="detail-columns">
         <div>
           <h3>Main Abilities</h3>
-          <div className="pill-list">
-            {species.abilities.map((ability) => <span className="soft-pill" key={ability.id}>{ability.name}</span>)}
-          </div>
+          {species.abilities.length ? <div className="pill-list">{species.abilities.map((ability) => <span className="soft-pill" key={ability.id}>{ability.name}</span>)}</div> : <p className="empty compact">No ability references were extracted.</p>}
         </div>
         <div>
           <h3>Sub-Abilities</h3>
-          <div className="pill-list">
-            {species.subAbilities.map((ability) => <span className="soft-pill" key={ability.id}>{ability.name}</span>)}
-          </div>
+          {species.subAbilities.length ? <div className="pill-list">{species.subAbilities.map((ability) => <span className="soft-pill" key={ability.id}>{ability.name}</span>)}</div> : <p className="empty compact">No sub-ability references were extracted.</p>}
         </div>
       </div>
     </section>
@@ -406,13 +464,14 @@ function EvolutionTab({ detail }: { detail: NonNullable<ReturnType<typeof buildS
       {detail.evolutions.length === 0 ? <p className="empty">No evolution records were generated for this species.</p> : null}
       <div className="record-list">
         {detail.evolutions.map((evolution) => (
-          <article className="record-row" key={evolution.id}>
+          <article className="record-row" key={evolution.record.id}>
             <div>
-              <h3>{evolution.fromSpeciesId} {"->"} {evolution.toSpeciesName ?? evolution.toSpeciesId ?? "Unknown"}</h3>
-              <p>{evolution.method}{evolution.condition ? ` - ${evolution.condition}` : ""}</p>
-              <small>Method labels still need enum mapping where shown as raw `kind:*` values.</small>
+              <h3>{evolution.heading}</h3>
+              <p>{evolution.methodLabel}</p>
+              {evolution.conditionLabel ? <small>{evolution.conditionLabel}</small> : null}
+              {evolution.note ? <small>{evolution.note}</small> : null}
             </div>
-            <ConfidenceBadge confidence={evolution.confidence} />
+            <ConfidenceBadge confidence={evolution.record.confidence} />
           </article>
         ))}
       </div>
@@ -427,12 +486,15 @@ function LocationsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildS
       {detail.locations.length === 0 ? <p className="empty">No generated encounter/location record currently references this species.</p> : null}
       <div className="record-list">
         {detail.locations.map((location) => (
-          <article className="record-row" key={location.id}>
+          <article className="record-row" key={location.location.id}>
             <div>
-              <h3>{location.name}</h3>
-              <p>{location.matchingEncounters.slice(0, 5).map((encounter) => `${encounter.method ?? "encounter"} ${encounter.notes ?? ""}`.trim()).join(" | ")}</p>
+              <h3>{location.location.name}</h3>
+              <p>{location.methods.join(" | ")}</p>
+              {location.location.earliestAvailability ? <small>Earliest: {location.location.earliestAvailability}</small> : null}
+              {location.notes.slice(0, 2).map((note) => <small key={note}>{note}</small>)}
+              <small>{location.encounterCount} matching encounter row(s)</small>
             </div>
-            <ConfidenceBadge confidence={location.confidence} />
+            <ConfidenceBadge confidence={location.location.confidence} />
           </article>
         ))}
       </div>
@@ -452,7 +514,16 @@ function BuildsTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpec
         <div><dt>Role</dt><dd>{recommendation.role}</dd></div>
         <div><dt>Nature</dt><dd>{recommendation.nature ?? "Uncertain"}</dd></div>
         <div><dt>Legality</dt><dd>{recommendation.legality.status}</dd></div>
+        <div><dt>Main ability</dt><dd>{recommendation.mainAbility ?? "Uncertain"}</dd></div>
+        <div><dt>Item</dt><dd>{recommendation.item ?? "No confirmed item recommendation yet"}</dd></div>
+        <div><dt>EV spread</dt><dd>{recommendation.evSpread ? Object.entries(recommendation.evSpread).map(([stat, value]) => `${stat} ${value}`).join(", ") : "Uncertain"}</dd></div>
       </dl>
+      {recommendation.subAbilities.length ? (
+        <>
+          <h3>Sub-Abilities</h3>
+          <div className="pill-list">{recommendation.subAbilities.map((ability) => <span className="soft-pill" key={ability}>{ability}</span>)}</div>
+        </>
+      ) : null}
       {recommendation.moves.length ? (
         <div className="pill-list">{recommendation.moves.map((move) => <span className="soft-pill" key={move}>{move}</span>)}</div>
       ) : <p className="empty">No confirmed move options are available for this preview.</p>}
@@ -474,17 +545,28 @@ function SourceTab({ detail }: { detail: NonNullable<ReturnType<typeof buildSpec
         <ConfidenceBadge confidence={detail.species.confidence} />
       </div>
       <div className="record-list">
+        {detail.sourceFacts.map((fact) => (
+          <article className="record-row" key={`fact-${fact.label}`}>
+            <div>
+              <h3>{fact.label}</h3>
+              <p>{fact.value}</p>
+            </div>
+            <ConfidenceBadge confidence={fact.confidence} />
+          </article>
+        ))}
         {detail.species.source.map((source) => (
           <article className="record-row" key={`${source.sourceFile}-${source.parser}-${source.sourcePath ?? ""}`}>
             <div>
               <h3>{source.sourceFile}</h3>
               <p>{source.parser}</p>
               <small>{source.sourcePath ?? "No source path recorded"}</small>
+              {source.notes.map((note) => <small key={note}>{note}</small>)}
             </div>
             <ConfidenceBadge confidence={source.confidence} />
           </article>
         ))}
       </div>
+      {detail.sourceWarnings.length ? <ul className="tight-list">{detail.sourceWarnings.map((warning) => <li key={warning}>{warning}</li>)}</ul> : null}
       <p className="notice">Sprites are bundled from local generated assets for private/mobile builds. Public releases need rights/permission or user-provided sprite packs.</p>
     </section>
   );
@@ -501,15 +583,14 @@ function SimpleDataPage({ title, records }: { title: string; records: Array<{ id
   );
 }
 
-function SaveManagerPage() {
-  const [save, setSave] = useState<ParsedSave | undefined>();
+function SaveManagerPage({ save, onSaveLoaded }: { save?: ParsedSave; onSaveLoaded: (save: ParsedSave | undefined) => void }) {
   const [error, setError] = useState<string | undefined>();
 
   async function onFile(file?: File) {
     if (!file) return;
     setError(undefined);
     try {
-      setSave(await analyzeSaveFile(file));
+      onSaveLoaded(await analyzeSaveFile(file));
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not analyze save file.");
     }
@@ -539,11 +620,22 @@ function SaveManagerPage() {
           <ul className="tight-list">{save.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
         </section>
       ) : null}
+      <section className="panel">
+        <div className="panel-heading">
+          <h2>Fixture readiness</h2>
+          <span className="status-pill">Read-only research only</span>
+        </div>
+        <ul className="tight-list">
+          <li>Needed milestones: clean new game, starter chosen, one catch, one PC deposit, first badge.</li>
+          <li>Randomized moves and randomized abilities/sub-abilities need separate fixtures if those modes matter.</li>
+          <li>Parser confidence stays low for party, PC, progression, and randomizer flags until repeated byte-comparison evidence exists.</li>
+        </ul>
+      </section>
     </section>
   );
 }
 
-function TeamBuilderPage({ data }: { data: AppData }) {
+function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: ParsedSave }) {
   const [advanced, setAdvanced] = useState(false);
   const mockOwned: ParsedPokemon[] = data.species.slice(0, 6).map((species, index) => ({
     id: `mock-${species.id}`,
@@ -557,14 +649,35 @@ function TeamBuilderPage({ data }: { data: AppData }) {
     confidence: "low",
     warnings: ["Mock owned Pokemon used until save party/PC offsets are confirmed."]
   }));
-  const recommendations = recommendBuilds({ ownedPokemon: mockOwned, species: data.species, learnsets: data.learnsets, levelCap: 20, randomizerSuspected: true });
-  const teamSpecies = mockOwned
+  const owned = currentSave?.party.length ? currentSave.party : mockOwned;
+  const usingMockTeam = !currentSave?.party.length;
+  const recommendations = recommendBuilds({
+    ownedPokemon: owned,
+    species: data.species,
+    learnsets: data.learnsets,
+    levelCap: currentSave?.progression?.currentLevelCap ?? 20,
+    randomizerSuspected: currentSave?.settings?.randomAbilities || currentSave?.settings?.randomMoves || currentSave?.settings?.randomSubAbilities || usingMockTeam
+  });
+  const teamSpecies = owned
     .map((owned) => data.species.find((species) => species.id === owned.speciesId))
     .filter((species): species is Species => Boolean(species));
   const coverage = analyzeDefensiveCoverage(teamSpecies);
   return (
     <section className="content-stack">
-      <p className="notice">Using mock owned Pokemon until real save party/PC parsing is fixture-confirmed. No Pokemon are created in saves and no save writing exists.</p>
+      <p className="notice">{usingMockTeam ? "Using mock owned Pokemon until real save party/PC parsing is fixture-confirmed. No Pokemon are created in saves and no save writing exists." : "Using parsed party data from the currently loaded local save. Party parsing is still provisional until fixture-backed offsets are confirmed."}</p>
+      {currentSave ? (
+        <section className="panel">
+          <div className="panel-heading">
+            <h2>Save context</h2>
+            <ConfidenceBadge confidence={currentSave.metadata.parserConfidence} />
+          </div>
+          <dl className="facts">
+            <div><dt>Loaded file</dt><dd>{currentSave.metadata.fileName}</dd></div>
+            <div><dt>Format</dt><dd>{currentSave.metadata.likelyFormat}</dd></div>
+            <div><dt>Party rows</dt><dd>{currentSave.party.length}</dd></div>
+          </dl>
+        </section>
+      ) : null}
       <div className="panel-heading">
         <h2>Owned Preview</h2>
         <button className="primary secondary" type="button" onClick={() => setAdvanced((value) => !value)}>{advanced ? "Simple" : "Advanced"}</button>
@@ -596,6 +709,9 @@ function TeamBuilderPage({ data }: { data: AppData }) {
             <div>
               <h3>{recommendation.speciesName}</h3>
               <p>{recommendation.role} - {recommendation.nature ?? "Nature uncertain"}</p>
+              {advanced && recommendation.mainAbility ? <small>Main ability: {recommendation.mainAbility}</small> : null}
+              {advanced && recommendation.subAbilities.length ? <small>Sub-abilities: {recommendation.subAbilities.join(", ")}</small> : null}
+              {advanced && recommendation.evSpread ? <small>EVs: {Object.entries(recommendation.evSpread).map(([stat, value]) => `${stat} ${value}`).join(", ")}</small> : null}
               {recommendation.moves.length ? <small>Moves: {recommendation.moves.join(", ")}</small> : null}
               <small>{recommendation.reasoning}</small>
               {advanced ? (

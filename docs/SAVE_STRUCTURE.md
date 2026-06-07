@@ -20,6 +20,11 @@ Do not fill this with guesses. Only document findings from:
 
 None yet.
 
+## Research Notes
+
+- The local NextDex archive contains source parsing files such as `src/species/evolutions.ts`, which are useful for understanding named source concepts and parser intent.
+- These source files help explain data shape, but they do not by themselves prove Elite Redux save offsets. Save-field confidence still requires fixture-backed byte comparison.
+
 ## Unknowns
 
 - Party offset

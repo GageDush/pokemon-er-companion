@@ -8,6 +8,7 @@
 ## Medium
 
 - Source-derived relationships whose target labels are not fully resolved, such as evolution method kind IDs.
+- UI summaries that are formatted from structured source records without adding new mechanics, such as grouped encounter methods or provenance facts.
 - PDF wiki text extraction when text is present.
 - Species detail build previews that use source-derived learnsets but not parsed save ownership.
 
@@ -22,8 +23,9 @@
 ## UI Rules
 
 - Detail pages must show confidence/source metadata when a field is not fully proven.
-- Evolution `kind:*` values are visible as raw source data until enum mapping is implemented.
+- Evolution `kind:*` values are visible as raw source data until enum mapping is implemented; source-shaped `EVO_*` labels may be humanized without changing their meaning.
 - Build tabs may use parsed learnsets, but save-specific legality remains uncertain until save fixtures prove ownership/randomizer settings.
+- Save Manager and Team Builder should explicitly say when a loaded save only provides metadata and not confirmed party/PC parsing.
 
 ## Rules
 

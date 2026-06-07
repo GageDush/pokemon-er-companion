@@ -100,10 +100,11 @@ The Save Manager accepts local `.sav`/`.srm` files and shows file name, file siz
 
 ## Current App UX
 
-- Mobile-first Pokedex with local sprites, type chips, confidence badges, and filters.
-- Species detail tabs: Overview, Stats, Learnset, Evolution, Locations, Builds, and Source.
-- Team Builder preview with local sprites, defensive coverage, and advanced legality details.
-- Save and Debug screens stay read-only and local.
+- Mobile-first shell with bottom primary navigation, utility page chips, and source/safety status capsules.
+- Mobile-first Pokedex with local sprites, type chips, confidence badges, filters, and empty-state guidance.
+- Species detail tabs: Overview, Stats, Learnset, Evolution, Locations, Builds, and Source, with provenance facts and source warnings.
+- Team Builder preview with local sprites, defensive coverage, save-context awareness, and advanced legality details.
+- Save and Debug screens stay read-only and local, with fixture-readiness scaffolding for future parser work.
 
 ## Save Fixture Research
 
