@@ -13,6 +13,7 @@
 - Read-only save metadata loader: file size, likely format, SHA-256, hex preview, debug JSON export.
 - Read-only save research inspector: size-family detection, aligned block candidates, generic offset groups, and richer debug export structure.
 - Source-backed read-only party preview using Elite Redux NextDex save scripts, with explicit medium-confidence warnings.
+- Source-backed read-only PC box preview using the direct-layout sector walk from local NextDex save scripts.
 - Read-only save byte comparison.
 - Team Builder can consume parsed party rows when available, otherwise it falls back to the clearly marked mock-owned flow.
 - Team Builder owned preview uses sprites and an advanced legality toggle.
@@ -60,8 +61,9 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 
 - Metadata/debug, aligned block research, and byte comparison work.
 - Source-backed party preview now uses local NextDex save scripts as a parser basis.
+- Source-backed PC preview now uses the direct-layout NextDex storage-sector walk as a parser basis.
 - Confirmed UI flow: Save Manager can show parsed party rows, and Team Builder can consume them when present.
-- PC, progression, badges, level cap, randomizer settings, and checksums are not parsed.
+- Progression, badges, level cap, randomizer settings, and checksums are not parsed.
 - Save writing is disabled.
 - Fixture instructions exist in `test/fixtures/saves/README.md`.
 - Fixture research plan exists in `docs/SAVE_FIXTURE_RESEARCH.md`.

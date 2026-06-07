@@ -10,6 +10,7 @@
 - Source-derived relationships whose target labels are not fully resolved, such as evolution method kind IDs.
 - UI summaries that are formatted from structured source records without adding new mechanics, such as grouped encounter methods or provenance facts.
 - Save party rows parsed from local Elite Redux NextDex save scripts when the save sector layout matches the source-backed offsets, before fixture-backed validation.
+- Save PC rows parsed from the local Elite Redux NextDex direct-layout storage-sector walk, before fixture-backed validation.
 - Save size-family identification and aligned bank/block research based on file-size heuristics only.
 - PDF wiki text extraction when text is present.
 - Species detail build previews that use source-derived learnsets but not parsed save ownership.

@@ -9,6 +9,13 @@ const TEAM_SECTOR_ID = 2;
 const TEAM_COUNT_OFFSET = 564;
 const TEAM_START_OFFSET = 568;
 const PARTY_SLOT_SIZE = 76;
+const BOX_SLOT_SIZE = 80;
+const BOX_COUNT = 14;
+const BOX_CAPACITY = 30;
+const DIRECT_PC_SECTOR_COUNT = 9;
+const DIRECT_PC_FIRST_SECTOR_SKIP = 4;
+const DIRECT_PC_SECTOR_DATA_BYTES = 3968;
+const DIRECT_PC_LAST_SECTOR_DATA_BYTES = 2000;
 
 interface EliteReduxFooterData {
   teamSectorOffset?: number;
@@ -21,6 +28,13 @@ interface RawPartyMon {
   heldItem: number;
   moves: number[];
   level: number;
+  abilitySlot: number;
+}
+
+interface RawBoxMon {
+  species: number;
+  heldItem: number;
+  moves: number[];
   abilitySlot: number;
 }
 
@@ -73,23 +87,26 @@ export async function analyzeSaveBytes(fileName: string, bytes: Uint8Array): Pro
 
 export async function parseSaveReadOnly(fileName: string, bytes: Uint8Array, lookups?: SaveParserLookupContext): Promise<ParsedSave> {
   const metadata = await analyzeSaveBytes(fileName, bytes);
-  const party = lookups ? parseEliteReduxParty(bytes, lookups) : [];
-  const parserConfidence = party.length > 0 ? "medium" : "low";
+  const parsed = lookups ? parseEliteReduxSave(bytes, lookups) : { party: [], boxes: [], warnings: [] };
+  const parserConfidence = parsed.party.length > 0 || parsed.boxes.some((box) => box.length > 0) ? "medium" : "low";
   metadata.parserConfidence = parserConfidence;
   const warnings = [
     "Read-only metadata parsed. Party and PC offsets are not fixture-confirmed for Elite Redux in this repository yet.",
-    party.length > 0
+    parsed.party.length > 0
       ? "Party rows were parsed from source-backed NextDex save scripts. Treat them as medium confidence until clean/played fixtures confirm the structure."
       : "No source-backed party rows were detected in this save. Clean/played fixtures are still needed before party parsing can be treated as confirmed.",
+    parsed.boxes.some((box) => box.length > 0)
+      ? "PC box rows were parsed from source-backed NextDex save scripts. Treat them as medium confidence until clean/played fixtures confirm the storage layout."
+      : "No source-backed PC box rows were detected in this save.",
     "No save bytes were mutated."
   ];
 
   return {
     metadata,
     research: buildSaveResearch(bytes, "none"),
-    party,
-    boxes: [],
-    warnings
+    party: parsed.party,
+    boxes: parsed.boxes,
+    warnings: warnings.concat(parsed.warnings)
   };
 }
 
@@ -102,8 +119,16 @@ export function exportSaveDebugJson(save: ParsedSave): string {
   return JSON.stringify(save, null, 2);
 }
 
-function parseEliteReduxParty(bytes: Uint8Array, lookups: SaveParserLookupContext): ParsedPokemon[] {
+function parseEliteReduxSave(bytes: Uint8Array, lookups: SaveParserLookupContext): Pick<ParsedSave, "party" | "boxes" | "warnings"> {
   const footer = getEliteReduxFooterData(bytes);
+  return {
+    party: parseEliteReduxParty(bytes, lookups, footer),
+    boxes: parseEliteReduxBoxes(bytes, lookups, footer),
+    warnings: buildLayoutWarnings(footer)
+  };
+}
+
+function parseEliteReduxParty(bytes: Uint8Array, lookups: SaveParserLookupContext, footer: EliteReduxFooterData): ParsedPokemon[] {
   if (footer.teamSectorOffset === undefined) return [];
 
   const teamCount = readNbytes(footer.teamSectorOffset + TEAM_COUNT_OFFSET, 4, bytes);
@@ -139,12 +164,67 @@ function parseEliteReduxParty(bytes: Uint8Array, lookups: SaveParserLookupContex
   return party;
 }
 
+function parseEliteReduxBoxes(bytes: Uint8Array, lookups: SaveParserLookupContext, footer: EliteReduxFooterData): ParsedPokemon[][] {
+  const directPcSectors = footer.pcSectorOffsets.slice(0, DIRECT_PC_SECTOR_COUNT).filter((offset): offset is number => typeof offset === "number");
+  if (directPcSectors.length < DIRECT_PC_SECTOR_COUNT) return [];
+
+  const flattened: ParsedPokemon[] = [];
+  let missedBytes: Uint8Array | undefined;
+  let remainingUnread = BOX_COUNT * BOX_CAPACITY;
+
+  for (let sectorIndex = 0; sectorIndex < DIRECT_PC_SECTOR_COUNT && remainingUnread > 0; sectorIndex += 1) {
+    let sectorOffset = directPcSectors[sectorIndex];
+    let maxOffset = sectorOffset + DIRECT_PC_SECTOR_DATA_BYTES;
+    if (sectorIndex === 0) {
+      sectorOffset += DIRECT_PC_FIRST_SECTOR_SKIP;
+    }
+    if (sectorIndex === DIRECT_PC_SECTOR_COUNT - 1) {
+      maxOffset = directPcSectors[sectorIndex] + DIRECT_PC_LAST_SECTOR_DATA_BYTES;
+    }
+
+    const result = readDirectPcSector(sectorOffset, bytes, missedBytes, remainingUnread, maxOffset, flattened.length, lookups);
+    missedBytes = result.missedBytes;
+    remainingUnread = result.remainingUnread;
+    flattened.push(...result.parsed);
+  }
+
+  if (flattened.length === 0) return [];
+  const boxes: ParsedPokemon[][] = [];
+  for (let boxIndex = 0; boxIndex < BOX_COUNT; boxIndex += 1) {
+    const start = boxIndex * BOX_CAPACITY;
+    const members = flattened.slice(start, start + BOX_CAPACITY);
+    if (members.length > 0) boxes.push(members);
+  }
+  return boxes;
+}
+
 function buildPartyWarnings(raw: RawPartyMon, species: Species | undefined, resolvedMoves: number): string[] {
   const warnings: string[] = [
     "Parsed from source-backed NextDex save scripts without fixture validation."
   ];
   if (!species) warnings.push(`Species raw ID ${raw.species} did not resolve against generated species data.`);
   if (resolvedMoves < raw.moves.filter((moveId) => moveId > 0).length) warnings.push("One or more move IDs did not resolve against generated move data.");
+  return warnings;
+}
+
+function buildBoxWarnings(raw: RawBoxMon, species: Species | undefined, resolvedMoves: number): string[] {
+  const warnings: string[] = [
+    "Parsed from source-backed NextDex PC storage scripts without fixture validation."
+  ];
+  if (!species) warnings.push(`Species raw ID ${raw.species} did not resolve against generated species data.`);
+  if (resolvedMoves < raw.moves.filter((moveId) => moveId > 0).length) warnings.push("One or more move IDs did not resolve against generated move data.");
+  return warnings;
+}
+
+function buildLayoutWarnings(footer: EliteReduxFooterData): string[] {
+  const warnings: string[] = [];
+  if (footer.teamSectorOffset === undefined) {
+    warnings.push("Could not identify the expected team sector candidate from source-backed save scripts.");
+  }
+  const directPcSectorCount = footer.pcSectorOffsets.filter((offset): offset is number => typeof offset === "number").length;
+  if (directPcSectorCount > 0 && directPcSectorCount < DIRECT_PC_SECTOR_COUNT) {
+    warnings.push(`Detected ${directPcSectorCount} of ${DIRECT_PC_SECTOR_COUNT} expected PC sectors for the source-backed direct layout.`);
+  }
   return warnings;
 }
 
@@ -170,10 +250,78 @@ function getEliteReduxFooterData(bytes: Uint8Array): EliteReduxFooterData {
   };
 }
 
+function readDirectPcSector(
+  offset: number,
+  bytes: Uint8Array,
+  missedBytes: Uint8Array | undefined,
+  remainingUnread: number,
+  maxOffset: number,
+  parsedOffset: number,
+  lookups: SaveParserLookupContext
+) {
+  const parsed: ParsedPokemon[] = [];
+  let currentOffset = offset;
+  let carry = missedBytes;
+  let remaining = remainingUnread;
+
+  if (carry && carry.length > 0) {
+    const bytesNeeded = BOX_SLOT_SIZE - carry.length;
+    const merged = new Uint8Array(BOX_SLOT_SIZE);
+    merged.set(carry);
+    merged.set(bytes.slice(currentOffset, currentOffset + bytesNeeded), carry.length);
+    currentOffset += bytesNeeded;
+    const raw = readDirectBoxMon(0, merged);
+    const pokemon = raw ? mapBoxMon(raw, parsedOffset + parsed.length, lookups) : undefined;
+    if (pokemon) parsed.push(pokemon);
+    remaining -= 1;
+    carry = undefined;
+  }
+
+  while (currentOffset + BOX_SLOT_SIZE <= maxOffset && remaining > 0) {
+    const raw = readDirectBoxMon(currentOffset, bytes);
+    const pokemon = raw ? mapBoxMon(raw, parsedOffset + parsed.length, lookups) : undefined;
+    if (pokemon) parsed.push(pokemon);
+    currentOffset += BOX_SLOT_SIZE;
+    remaining -= 1;
+  }
+
+  if (currentOffset < maxOffset) {
+    carry = bytes.slice(currentOffset, maxOffset);
+  }
+
+  return {
+    parsed,
+    missedBytes: carry,
+    remainingUnread: remaining
+  };
+}
+
 function readPartyMon(start: number, bytes: Uint8Array): RawPartyMon {
   return {
     ...readBoxedMon(start, bytes),
     level: readNbytes(start + 60, 1, bytes)
+  };
+}
+
+function readDirectBoxMon(start: number, bytes: Uint8Array): RawBoxMon | undefined {
+  const personality = readNbytes(start, 4, bytes);
+  if (!personality) return undefined;
+
+  const word5 = readNbytes(start + 8, 4, bytes);
+  const word6 = readNbytes(start + 12, 4, bytes);
+  const word7 = readNbytes(start + 16, 4, bytes);
+  const word8 = readNbytes(start + 20, 4, bytes);
+
+  return {
+    moves: [
+      readBits(word5, 0, 11),
+      readBits(word6, 0, 11),
+      readBits(word6, 11, 11),
+      readBits(word7, 16, 11)
+    ],
+    species: readBits(word7, 0, 16),
+    heldItem: readBits(word8, 0, 10),
+    abilitySlot: readBits(word8, 30, 2)
   };
 }
 
@@ -255,6 +403,29 @@ function readBoxedMon(start: number, bytes: Uint8Array): Omit<RawPartyMon, "leve
   };
 }
 
+function mapBoxMon(raw: RawBoxMon, flatIndex: number, lookups: SaveParserLookupContext): ParsedPokemon {
+  const species = lookups.speciesByRawId.get(raw.species);
+  const moves = raw.moves
+    .map((moveId) => resolveMoveName(moveId, lookups.movesByRawId))
+    .filter((moveName): moveName is string => Boolean(moveName));
+  const heldItem = resolveItemName(raw.heldItem, lookups.itemsByRawId);
+  const mainAbility = resolveAbilityName(raw.abilitySlot, species);
+  return {
+    id: `pc-slot-${flatIndex + 1}`,
+    source: "pc",
+    box: Math.floor(flatIndex / BOX_CAPACITY) + 1,
+    slot: (flatIndex % BOX_CAPACITY) + 1,
+    speciesId: species?.id,
+    speciesName: species?.name ?? `Species #${raw.species}`,
+    heldItem: heldItem ?? (raw.heldItem > 0 ? `Item #${raw.heldItem}` : undefined),
+    mainAbility,
+    subAbilities: [],
+    moves,
+    confidence: species ? "medium" : "low",
+    warnings: buildBoxWarnings(raw, species, moves.length)
+  };
+}
+
 function resolveAbilityName(abilitySlot: number, species?: Species): string | undefined {
   if (!species) return undefined;
   const ability = species.abilities[abilitySlot] ?? species.abilities[0];
@@ -273,6 +444,11 @@ function resolveItemName(itemId: number, itemMap: Map<number, Item>): string | u
 
 function numberValue(value: number | number[]): number {
   return Array.isArray(value) ? value[0] ?? 0 : value;
+}
+
+function readBits(value: number, startPos: number, width: number): number {
+  const mask = (1 << width) - 1;
+  return (value >>> startPos) & mask;
 }
 
 function readNbytes(start: number, nBytes: number, bytes: Uint8Array): number {

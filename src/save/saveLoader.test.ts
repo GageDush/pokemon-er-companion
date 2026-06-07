@@ -39,6 +39,11 @@ describe("saveLoader", () => {
     bytes[4084] = 0x02;
     bytes[4085] = 0x00;
     bytes[564] = 0x01;
+    for (let sectorId = 5; sectorId <= 13; sectorId += 1) {
+      const sectorOffset = sectorId * 4096;
+      bytes[sectorOffset + 4084] = sectorId;
+      bytes[sectorOffset + 4085] = 0x00;
+    }
 
     const partyStart = 568;
     writeSyntheticPartyMon(bytes, partyStart, {
@@ -50,6 +55,15 @@ describe("saveLoader", () => {
       move4: 0,
       abilityNum: 1,
       level: 17
+    });
+    writeSyntheticDirectBoxMon(bytes, 5 * 4096 + 4, {
+      species: 1,
+      heldItem: 2,
+      move1: 1,
+      move2: 2,
+      move3: 0,
+      move4: 0,
+      abilityNum: 1
     });
 
     const lookups: SaveParserLookupContext = {
@@ -90,6 +104,18 @@ describe("saveLoader", () => {
       speciesId: "species-bulbasaur",
       speciesName: "Bulbasaur",
       level: 17,
+      heldItem: "Potion",
+      mainAbility: "Chlorophyll",
+      moves: ["Tackle", "Growl"],
+      confidence: "medium"
+    });
+    expect(parsed.boxes).toHaveLength(1);
+    expect(parsed.boxes[0][0]).toMatchObject({
+      source: "pc",
+      box: 1,
+      slot: 1,
+      speciesId: "species-bulbasaur",
+      speciesName: "Bulbasaur",
       heldItem: "Potion",
       mainAbility: "Chlorophyll",
       moves: ["Tackle", "Growl"],
@@ -158,6 +184,15 @@ function writeSyntheticPartyMon(bytes: Uint8Array, start: number, values: Synthe
   bytes[start + 60] = values.level;
 }
 
+function writeSyntheticDirectBoxMon(bytes: Uint8Array, start: number, values: Omit<SyntheticMonValues, "level">) {
+  writeWord(bytes, start + 8, values.move1 | (0 << 11));
+  writeWord(bytes, start + 12, values.move2 | (values.move3 << 11) | (70 << 22));
+  writeWord(bytes, start + 16, values.species | (values.move4 << 16));
+  writeWord(bytes, start + 20, values.heldItem | (values.abilityNum << 30));
+  writeWord(bytes, start, 1);
+  writeWord(bytes, start + 4, 1);
+}
+
 function writeBits(bytes: Uint8Array, start: number, bitOffset: number, bitLength: number, value: number) {
   for (let bit = 0; bit < bitLength; bit += 1) {
     const absoluteBit = bitOffset + bit;
@@ -168,4 +203,11 @@ function writeBits(bytes: Uint8Array, start: number, bitOffset: number, bitLengt
       bytes[byteOffset] |= 1 << bitInByte;
     }
   }
+}
+
+function writeWord(bytes: Uint8Array, start: number, value: number) {
+  bytes[start] = value & 0xff;
+  bytes[start + 1] = (value >>> 8) & 0xff;
+  bytes[start + 2] = (value >>> 16) & 0xff;
+  bytes[start + 3] = (value >>> 24) & 0xff;
 }

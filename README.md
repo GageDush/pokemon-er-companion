@@ -98,15 +98,17 @@ Sprites are extracted locally from the provided NextDex archive. The mobile app 
 
 The Save Manager accepts local `.sav`/`.srm` files and shows file name, file size, likely format, size-family research, SHA-256, aligned block candidates, candidate offset groups, first 256 bytes as hex preview, and debug JSON export.
 
-The app now also attempts a **source-backed, read-only party preview** using Elite Redux NextDex save scripts found in the local raw archive:
+The app now also attempts **source-backed, read-only party and PC previews** using Elite Redux NextDex save scripts found in the local raw archive:
 
 - sector scan over 4 KiB save blocks
 - team sector candidate `id = 2`
 - team count at offset `564`
 - party rows from offset `568`
 - 76-byte party slot layout
+- direct-layout PC sectors `5..13`
+- 80-byte boxed rows with a first-sector `+4` byte skip and a shortened last-sector data window
 
-These party rows are still **medium confidence only** until clean/played fixtures confirm the offsets against real saves. PC parsing, progression, randomizer settings, and checksums remain unproven.
+These save previews are still **medium confidence only** until clean/played fixtures confirm the offsets against real saves. Progression, randomizer settings, and checksums remain unproven.
 
 ## Current App UX
 

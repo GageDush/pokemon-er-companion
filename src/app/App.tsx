@@ -725,6 +725,10 @@ function SaveManagerPage({ data, save, onSaveLoaded }: { data: AppData; save?: P
               <span>Parsed party rows</span>
               <strong>{save.party.length}</strong>
             </article>
+            <article className="metric">
+              <span>Parsed PC rows</span>
+              <strong>{save.boxes.reduce((sum, box) => sum + box.length, 0)}</strong>
+            </article>
           </section>
           <section className="panel">
             <div className="panel-heading">
@@ -762,6 +766,27 @@ function SaveManagerPage({ data, save, onSaveLoaded }: { data: AppData; save?: P
                       {pokemon.warnings.map((warning) => <small key={warning}>{warning}</small>)}
                     </div>
                     <ConfidenceBadge confidence={pokemon.confidence} />
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+          {save.boxes.some((box) => box.length > 0) ? (
+            <section className="panel">
+              <div className="panel-heading">
+                <h2>Parsed PC box preview</h2>
+                <span className="status-pill">source-backed, fixture pending</span>
+              </div>
+              <div className="record-list">
+                {save.boxes.slice(0, 3).map((box, index) => (
+                  <article className="record-row" key={`box-${index + 1}`}>
+                    <div>
+                      <h3>Box {index + 1}</h3>
+                      <p>{box.length} parsed row(s)</p>
+                      <small>{box.slice(0, 3).map((pokemon) => pokemon.speciesName).join(", ") || "No resolved species yet"}</small>
+                      {box.some((pokemon) => pokemon.warnings.length > 0) ? <small>{box.flatMap((pokemon) => pokemon.warnings).slice(0, 2).join(" ")}</small> : null}
+                    </div>
+                    <ConfidenceBadge confidence={box.some((pokemon) => pokemon.confidence === "medium") ? "medium" : "low"} />
                   </article>
                 ))}
               </div>
