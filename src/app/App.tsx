@@ -878,6 +878,7 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
   }));
   const teamResolution = resolveOwnedTeam(currentSave, mockOwned);
   const owned = teamResolution.ownedPokemon;
+  const reserves = teamResolution.reservePokemon;
   const usingMockTeam = teamResolution.source === "mock-fallback";
   const recommendations = recommendBuilds({
     ownedPokemon: owned,
@@ -890,6 +891,10 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
     .map((owned) => data.species.find((species) => species.id === owned.speciesId))
     .filter((species): species is Species => Boolean(species));
   const unresolvedOwned = owned.filter((pokemon) => !pokemon.speciesId || !data.species.find((species) => species.id === pokemon.speciesId));
+  const reserveSpecies = reserves
+    .map((owned) => data.species.find((species) => species.id === owned.speciesId))
+    .filter((species): species is Species => Boolean(species));
+  const unresolvedReserves = reserves.filter((pokemon) => !pokemon.speciesId || !data.species.find((species) => species.id === pokemon.speciesId));
   const coverage = analyzeDefensiveCoverage(teamSpecies);
   return (
     <section className="content-stack">
@@ -917,6 +922,7 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
             <div><dt>Format</dt><dd>{currentSave.metadata.likelyFormat}</dd></div>
             <div><dt>Data source</dt><dd>{teamResolution.source === "parsed-save" ? "Parsed save party" : "Mock fallback roster"}</dd></div>
             <div><dt>Party rows</dt><dd>{currentSave.party.length}</dd></div>
+            <div><dt>PC rows</dt><dd>{reserves.length}</dd></div>
           </dl>
           <ul className="tight-list">{teamResolution.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>
         </section>
@@ -949,6 +955,32 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
           </article>
         ))}
       </div>
+      {currentSave && reserves.length > 0 ? (
+        <section className="panel">
+          <div className="panel-heading">
+            <h2>Reserve Boxes</h2>
+            <span className="status-pill">{reserves.length} parsed PC row(s)</span>
+          </div>
+          <p className="notice">Reserve rows come from source-backed PC parsing and stay medium/low confidence until fixture-backed validation proves the storage layout.</p>
+          <div className="team-roster reserve-roster">
+            {reserveSpecies.slice(0, 12).map((species, index) => (
+              <SpeciesCard species={species} key={`reserve-${species.id}-${index}`} />
+            ))}
+            {unresolvedReserves.slice(0, 6).map((pokemon) => (
+              <article className="panel unresolved-party-card" key={`reserve-${pokemon.id}`}>
+                <div className="panel-heading">
+                  <h3>{pokemon.speciesName}</h3>
+                  <ConfidenceBadge confidence={pokemon.confidence} />
+                </div>
+                <p>Parsed reserve row exists, but species mapping is incomplete.</p>
+                {pokemon.box ? <small>Box {pokemon.box}</small> : null}
+                {pokemon.slot ? <small>Slot {pokemon.slot}</small> : null}
+                {pokemon.warnings.map((warning) => <small key={warning}>{warning}</small>)}
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
       <section className="panel">
         <h2>Defensive Coverage</h2>
         {teamSpecies.length === 0 ? <p className="empty compact">Coverage stays unavailable until at least one team member resolves to parsed species data.</p> : null}

@@ -2,6 +2,7 @@ import { ParsedPokemon, ParsedSave } from "../types";
 
 export interface TeamDataResolution {
   ownedPokemon: ParsedPokemon[];
+  reservePokemon: ParsedPokemon[];
   source: "parsed-save" | "mock-fallback";
   partial: boolean;
   warnings: string[];
@@ -11,6 +12,7 @@ export function resolveOwnedTeam(currentSave: ParsedSave | undefined, mockOwned:
   if (!currentSave || currentSave.party.length === 0) {
     return {
       ownedPokemon: mockOwned,
+      reservePokemon: [],
       source: "mock-fallback",
       partial: false,
       warnings: [
@@ -23,6 +25,7 @@ export function resolveOwnedTeam(currentSave: ParsedSave | undefined, mockOwned:
   const partial = currentSave.party.some((pokemon) => !pokemon.speciesId || pokemon.confidence !== "high");
   return {
     ownedPokemon: currentSave.party,
+    reservePokemon: currentSave.boxes.flat(),
     source: "parsed-save",
     partial,
     warnings: partial

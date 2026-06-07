@@ -2,6 +2,8 @@
 
 The app now has a source-backed, read-only party preview derived from local Elite Redux NextDex save scripts. This plan exists to confirm or correct that preview with real fixture evidence before any party field is promoted above medium confidence.
 
+Current local status: a search across common user folders did not find obvious Elite Redux `.sav` or `.srm` milestone files yet, so fixture-backed validation still needs either exported emulator saves or manually provided private fixtures.
+
 Save parsing remains read-only. This plan is for confidence-building only; it does not authorize save writing.
 
 ## Fixture Set Needed

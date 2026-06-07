@@ -20,6 +20,7 @@ describe("resolveOwnedTeam", () => {
     const result = resolveOwnedTeam(undefined, mockOwned);
     expect(result.source).toBe("mock-fallback");
     expect(result.ownedPokemon).toEqual(mockOwned);
+    expect(result.reservePokemon).toEqual([]);
   });
 
   it("uses parsed save party when present and marks partial uncertainty", () => {
@@ -44,7 +45,20 @@ describe("resolveOwnedTeam", () => {
           warnings: ["Slot boundary inferred only."]
         }
       ],
-      boxes: [],
+      boxes: [[
+        {
+          id: "pc-1",
+          source: "pc",
+          box: 1,
+          slot: 1,
+          speciesId: "species-ivysaur",
+          speciesName: "Ivysaur",
+          moves: [],
+          subAbilities: [],
+          confidence: "medium",
+          warnings: []
+        }
+      ]],
       warnings: []
     };
 
@@ -52,5 +66,6 @@ describe("resolveOwnedTeam", () => {
     expect(result.source).toBe("parsed-save");
     expect(result.partial).toBe(true);
     expect(result.ownedPokemon[0].source).toBe("party");
+    expect(result.reservePokemon[0].source).toBe("pc");
   });
 });

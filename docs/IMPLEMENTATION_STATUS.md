@@ -68,6 +68,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 - Fixture instructions exist in `test/fixtures/saves/README.md`.
 - Fixture research plan exists in `docs/SAVE_FIXTURE_RESEARCH.md`.
 - No sanitized local `.sav` or `.srm` fixtures are currently present in the repository.
+- A local search across common user folders did not surface obvious Elite Redux save fixtures yet, so fixture-backed validation is still pending.
 
 ## Packaging Blockers
 
