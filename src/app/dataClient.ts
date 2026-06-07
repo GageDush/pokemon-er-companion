@@ -48,9 +48,23 @@ export const emptyData: AppData = {
   warnings: ["Generated data has not been loaded yet. Run npm.cmd run data:generate."]
 };
 
+function basePath(): string {
+  return import.meta.env.BASE_URL || "/";
+}
+
+function generatedUrl(name: string): string {
+  return `${basePath()}generated/${name}`;
+}
+
+export function resolveAppAssetPath(assetPath: string | undefined): string | undefined {
+  if (!assetPath) return assetPath;
+  if (!assetPath.startsWith("/")) return assetPath;
+  return `${basePath()}${assetPath.slice(1)}`;
+}
+
 async function loadJson<T>(name: string, fallback: T): Promise<T> {
   try {
-    const response = await fetch(`/generated/${name}`);
+    const response = await fetch(generatedUrl(name));
     if (!response.ok) return fallback;
     return (await response.json()) as T;
   } catch {
@@ -78,7 +92,10 @@ export async function loadAppData(): Promise<AppData> {
 
   return {
     manifest,
-    species,
+    species: species.map((entry) => ({
+      ...entry,
+      spritePath: resolveAppAssetPath(entry.spritePath)
+    })),
     learnsets,
     evolutions,
     moves,
