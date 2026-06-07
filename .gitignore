@@ -52,3 +52,6 @@ ios/
 Thumbs.db
 .idea/
 .vscode/
+
+# Local sibling/clone used for GitHub handoff coordination
+RogueReduxHub/
