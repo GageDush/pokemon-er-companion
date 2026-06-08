@@ -1,0 +1,75 @@
+{
+  "gameVersion": "2.65.3b",
+  "generatedAt": "2026-06-07T22:36:11Z",
+  "parserVersion": "0.1.0",
+  "sources": [
+    {
+      "sourceFile": "ER-nextdex-main.zip",
+      "parser": "extract_sources.py:nextdex-game-data",
+      "recordCounts": {
+        "species": 1906,
+        "learnsets": 1906,
+        "evolutions": 1035,
+        "moves": 1031,
+        "abilities": 1033,
+        "subabilities": 1033,
+        "items": 928,
+        "sprites": 1906
+      },
+      "warnings": [],
+      "confidence": "high"
+    },
+    {
+      "sourceFile": "Pokémon Elite Redux V2.65 beta — Mono Earliest Locations.xlsx",
+      "parser": "extract_sources.py:parse-earliest-locations",
+      "recordCounts": {
+        "locations": 198
+      },
+      "warnings": [],
+      "confidence": "low"
+    },
+    {
+      "sourceFile": "ER Trainer Locations 2.5.xlsx",
+      "parser": "extract_sources.py:parse-trainer-locations",
+      "recordCounts": {
+        "trainers": 795
+      },
+      "warnings": [],
+      "confidence": "low"
+    },
+    {
+      "sourceFile": "ER-nextdex-main.zip",
+      "parser": "extract_sources.py:nextdex-static-locations-trainers",
+      "recordCounts": {
+        "locations": 175,
+        "trainers": 895
+      },
+      "warnings": [],
+      "confidence": "high"
+    },
+    {
+      "sourceFile": "PDF docs",
+      "parser": "extract_sources.py:parse-pdf-docs",
+      "recordCounts": {
+        "wiki": 7
+      },
+      "warnings": [],
+      "confidence": "medium"
+    }
+  ],
+  "totals": {
+    "species": 1906,
+    "learnsets": 1906,
+    "evolutions": 1035,
+    "moves": 1031,
+    "abilities": 1033,
+    "subabilities": 1033,
+    "items": 928,
+    "locations": 373,
+    "trainers": 1690,
+    "mechanics": 7,
+    "search-index": 3976,
+    "warnings": 0
+  },
+  "warnings": []
+}
