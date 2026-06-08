@@ -23,6 +23,8 @@ import { buildSpeciesDetailData } from "../dex/speciesDetail";
 import { typeColor, typeWash } from "../dex/typeColors";
 import { analyzeSaveArtifact, exportSaveDebugJson } from "../save/saveLoader";
 import { compareSaveBytes, SaveCompareResult } from "../save/saveCompare";
+import { buildFixtureLabSummary, FixtureLabSummary } from "../save/saveFixtureLab";
+import { loadSaveCandidates } from "../save/saveImport";
 import { searchDocuments } from "../search/searchIndex";
 import { analyzeDefensiveCoverage } from "../team-builder/coverage";
 import { recommendBuilds } from "../team-builder/recommender";
@@ -1054,17 +1056,145 @@ function TeamBuilderPage({ data, currentSave }: { data: AppData; currentSave?: P
 }
 
 function DebugComparePage() {
+  const [artifactError, setArtifactError] = useState<string | undefined>();
+  const [artifactCandidates, setArtifactCandidates] = useState<Array<{ name: string; bytes: Uint8Array; notes: string[] }>>([]);
+  const [artifactAIndex, setArtifactAIndex] = useState(0);
+  const [artifactBIndex, setArtifactBIndex] = useState(1);
   const [a, setA] = useState<Uint8Array | undefined>();
   const [b, setB] = useState<Uint8Array | undefined>();
   const result: SaveCompareResult | undefined = useMemo(() => (a && b ? compareSaveBytes(a, b) : undefined), [a, b]);
+  const fixtureSummary: FixtureLabSummary | undefined = useMemo(() => {
+    const candidateA = artifactCandidates[artifactAIndex];
+    const candidateB = artifactCandidates[artifactBIndex];
+    return candidateA && candidateB ? buildFixtureLabSummary(candidateA.bytes, candidateB.bytes) : undefined;
+  }, [artifactAIndex, artifactBIndex, artifactCandidates]);
 
   async function readFile(file: File | undefined, setter: (bytes: Uint8Array) => void) {
     if (!file) return;
     setter(new Uint8Array(await file.arrayBuffer()));
   }
 
+  async function readArtifact(file: File | undefined) {
+    if (!file) return;
+    setArtifactError(undefined);
+    try {
+      const imported = await loadSaveCandidates(file);
+      const mapped = imported.candidates.map((candidate) => ({
+        name: candidate.fileName,
+        bytes: candidate.bytes,
+        notes: candidate.notes
+      }));
+      setArtifactCandidates(mapped);
+      setArtifactAIndex(0);
+      setArtifactBIndex(mapped.length > 1 ? 1 : 0);
+    } catch (error) {
+      setArtifactCandidates([]);
+      setArtifactError(error instanceof Error ? error.message : "Could not import artifact candidates.");
+    }
+  }
+
   return (
     <section className="content-stack">
+      <section className="panel">
+        <div className="panel-heading">
+          <h2>Fixture Lab</h2>
+          <span className="status-pill">mobile export aware</span>
+        </div>
+        <p className="notice">Load one `.sav`, `.srm`, `.gz`, or `.zip` export and compare distinct embedded save candidates from the same lineage. This stays fully local and read-only.</p>
+        <label className="drop-zone compact">
+          <span>Artifact / save bundle</span>
+          <input type="file" accept=".sav,.srm,.gz,.zip,application/octet-stream,application/zip,application/gzip" onChange={(event) => readArtifact(event.target.files?.[0])} />
+        </label>
+        {artifactError ? <p className="error">{artifactError}</p> : null}
+        {artifactCandidates.length > 0 ? (
+          <>
+            <div className="two-column">
+              <label className="field-stack">
+                <span>Candidate A</span>
+                <select value={artifactAIndex} onChange={(event) => setArtifactAIndex(Number(event.target.value))}>
+                  {artifactCandidates.map((candidate, index) => <option value={index} key={`artifact-a-${candidate.name}`}>{candidate.name}</option>)}
+                </select>
+              </label>
+              <label className="field-stack">
+                <span>Candidate B</span>
+                <select value={artifactBIndex} onChange={(event) => setArtifactBIndex(Number(event.target.value))}>
+                  {artifactCandidates.map((candidate, index) => <option value={index} key={`artifact-b-${candidate.name}`}>{candidate.name}</option>)}
+                </select>
+              </label>
+            </div>
+            <div className="record-list">
+              {artifactCandidates.map((candidate, index) => (
+                <article className="record-row compact-record" key={`artifact-candidate-${candidate.name}`}>
+                  <div>
+                    <h3>{candidate.name}</h3>
+                    <p>{candidate.bytes.length} byte(s)</p>
+                    {candidate.notes.map((note) => <small key={`${candidate.name}-${note}`}>{note}</small>)}
+                  </div>
+                  <small>{index === artifactAIndex ? "A" : index === artifactBIndex ? "B" : "candidate"}</small>
+                </article>
+              ))}
+            </div>
+          </>
+        ) : null}
+        {fixtureSummary ? (
+          <>
+            <section className="save-summary-grid">
+              <article className="metric">
+                <span>Changed bytes</span>
+                <strong>{fixtureSummary.compare.changedByteCount}</strong>
+              </article>
+              <article className="metric">
+                <span>Changed ranges</span>
+                <strong>{fixtureSummary.compare.ranges.length}</strong>
+              </article>
+              <article className="metric">
+                <span>Changed sectors</span>
+                <strong>{fixtureSummary.changedSectors.length}</strong>
+              </article>
+              <article className="metric">
+                <span>Party overlap</span>
+                <strong>{fixtureSummary.partyOverlap ? "Yes" : "No"}</strong>
+              </article>
+            </section>
+            <section className="panel">
+              <div className="panel-heading">
+                <h2>Likely parser-region overlap</h2>
+                <span className="status-pill">candidate evidence only</span>
+              </div>
+              <ul className="tight-list">
+                <li>
+                  Party candidate range A: {fixtureSummary.partyRangeA ? formatOffsetRange(fixtureSummary.partyRangeA.start, fixtureSummary.partyRangeA.end) : "Not found"}
+                </li>
+                <li>
+                  Party candidate range B: {fixtureSummary.partyRangeB ? formatOffsetRange(fixtureSummary.partyRangeB.start, fixtureSummary.partyRangeB.end) : "Not found"}
+                </li>
+                {fixtureSummary.pcLayoutOverlaps.map((layout) => (
+                  <li key={layout.id}>
+                    {layout.label}: {layout.overlap ? "changed bytes overlap this candidate layout" : "no overlap flagged"} ({layout.sectorCountA}/{layout.sectorCountB} sectors found)
+                  </li>
+                ))}
+              </ul>
+            </section>
+            <section className="panel">
+              <div className="panel-heading">
+                <h2>Changed sectors</h2>
+                <span className="status-pill">{fixtureSummary.changedSectors.length} sector(s)</span>
+              </div>
+              <div className="record-list">
+                {fixtureSummary.changedSectors.slice(0, 20).map((sector) => (
+                  <article className="record-row compact-record" key={`sector-${sector.offset}`}>
+                    <div>
+                      <h3>{formatOffsetRange(sector.offset, sector.offset + 4096)}</h3>
+                      <p>Sector IDs A/B: {sector.sectorIdA ?? "?"} / {sector.sectorIdB ?? "?"}</p>
+                    </div>
+                    <small>4 KiB</small>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </>
+        ) : null}
+      </section>
       <div className="two-column">
         <label className="drop-zone compact"><span>Save A</span><input type="file" accept=".sav,.srm,application/octet-stream" onChange={(event) => readFile(event.target.files?.[0], setA)} /></label>
         <label className="drop-zone compact"><span>Save B</span><input type="file" accept=".sav,.srm,application/octet-stream" onChange={(event) => readFile(event.target.files?.[0], setB)} /></label>

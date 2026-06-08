@@ -997,6 +997,16 @@ button.record-row {
   cursor: pointer;
 }
 
+.field-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.field-stack span {
+  font-size: 0.82rem;
+  color: var(--muted-soft);
+}
+
 .facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

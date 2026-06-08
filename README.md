@@ -137,6 +137,7 @@ node_modules\.bin\vite-node.cmd scripts\verify_save.ts "C:\path\to\your-mobile-e
 - Species detail tabs: Overview, Stats, Learnset, Evolution, Locations, Builds, and Source, with provenance facts and source warnings.
 - Team Builder preview with local sprites, defensive coverage, save-context awareness, and advanced legality details.
 - Save and Debug screens stay read-only and local, with fixture-readiness scaffolding plus aligned block/group save research panels.
+- Debug/Compare now includes a Fixture Lab that can load one mobile export bundle, select two extracted save candidates, and summarize changed bytes, sectors, and likely party/PC candidate-region overlap.
 
 ## Save Fixture Research
 

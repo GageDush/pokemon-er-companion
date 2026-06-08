@@ -16,6 +16,7 @@
 - Source-backed read-only party preview using Elite Redux NextDex save scripts, with explicit medium-confidence warnings.
 - Source-backed read-only PC box preview using the direct-layout sector walk from local NextDex save scripts.
 - Read-only save byte comparison.
+- Debug/Compare fixture lab for comparing two extracted candidates from the same mobile export bundle, with changed-byte, changed-sector, and candidate parser-region overlap summaries.
 - Team Builder can consume parsed party rows when available, otherwise it falls back to the clearly marked mock-owned flow.
 - Team Builder owned preview uses sprites and an advanced legality toggle.
 - Save Manager fixture-readiness panel tied to the read-only parser roadmap.
