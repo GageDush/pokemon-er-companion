@@ -21,7 +21,7 @@ import { RecordList } from "../components/RecordList";
 import { SearchBox } from "../components/SearchBox";
 import { buildSpeciesDetailData } from "../dex/speciesDetail";
 import { typeColor, typeWash } from "../dex/typeColors";
-import { analyzeSaveFile, exportSaveDebugJson } from "../save/saveLoader";
+import { analyzeSaveArtifact, exportSaveDebugJson } from "../save/saveLoader";
 import { compareSaveBytes, SaveCompareResult } from "../save/saveCompare";
 import { searchDocuments } from "../search/searchIndex";
 import { analyzeDefensiveCoverage } from "../team-builder/coverage";
@@ -675,14 +675,18 @@ function SimpleDataPage({ title, records }: { title: string; records: Array<{ id
 
 function SaveManagerPage({ data, save, onSaveLoaded }: { data: AppData; save?: ParsedSave; onSaveLoaded: (save: ParsedSave | undefined) => void }) {
   const [error, setError] = useState<string | undefined>();
+  const [candidates, setCandidates] = useState<ParsedSave[]>([]);
   const lookupContext = useMemo(() => buildSaveParserLookupContext(data), [data]);
 
   async function onFile(file?: File) {
     if (!file) return;
     setError(undefined);
     try {
-      onSaveLoaded(await analyzeSaveFile(file, lookupContext));
+      const result = await analyzeSaveArtifact(file, lookupContext);
+      setCandidates(result.candidates);
+      onSaveLoaded(result.selected);
     } catch (err) {
+      setCandidates([]);
       setError(err instanceof Error ? err.message : "Could not analyze save file.");
     }
   }
@@ -693,17 +697,41 @@ function SaveManagerPage({ data, save, onSaveLoaded }: { data: AppData; save?: P
         <div>
           <span className="section-kicker">Save intake</span>
           <h2>Read-only local inspection</h2>
-          <p>Load a local `.sav` or `.srm` file to inspect metadata, verify hashes, and export debug JSON without mutating a single byte.</p>
+          <p>Load a local `.sav`, `.srm`, `.gz`, or `.zip` mobile export to inspect metadata, verify hashes, and export debug JSON without mutating a single byte.</p>
         </div>
         <label className="drop-zone">
           <FileSearch size={28} aria-hidden="true" />
-          <span>Choose a `.sav` or `.srm` file for local read-only analysis</span>
-          <input type="file" accept=".sav,.srm,application/octet-stream" onChange={(event) => onFile(event.target.files?.[0])} />
+          <span>Choose a local save or mobile GBA export for read-only analysis</span>
+          <input type="file" accept=".sav,.srm,.gz,.zip,application/octet-stream,application/zip,application/gzip" onChange={(event) => onFile(event.target.files?.[0])} />
         </label>
       </section>
       {error ? <p className="error">{error}</p> : null}
       {save ? (
         <>
+          {candidates.length > 1 ? (
+            <section className="panel">
+              <div className="panel-heading">
+                <h2>Imported save candidates</h2>
+                <span className="status-pill">{candidates.length} distinct candidate(s)</span>
+              </div>
+              <p className="notice">This archive contained multiple distinct save candidates. The app loaded the strongest current candidate automatically, and you can switch between them below.</p>
+              <div className="record-list">
+                {candidates.map((candidate) => {
+                  const isActive = candidate.metadata.sha256 === save.metadata.sha256;
+                  return (
+                    <button className={`record-row candidate-row ${isActive ? "active" : ""}`} key={candidate.metadata.sha256} onClick={() => onSaveLoaded(candidate)} type="button">
+                      <div>
+                        <h3>{candidate.metadata.fileName}</h3>
+                        <p>{candidate.party.length} party row(s), {candidate.boxes.reduce((sum, box) => sum + box.length, 0)} PC row(s)</p>
+                        <small>{candidate.warnings[0] ?? "No warnings recorded."}</small>
+                      </div>
+                      <ConfidenceBadge confidence={candidate.metadata.parserConfidence} />
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          ) : null}
           <section className="save-summary-grid">
             <article className="metric">
               <span>Parser confidence</span>

@@ -1,6 +1,7 @@
 import { Item, Move, ParsedPokemon, ParsedSave, SaveMetadata, Species } from "../types";
 import { SaveParserLookupContext } from "../app/dataClient";
 import { buildSaveResearch, detectSaveSizeFamily } from "./saveResearch";
+import { loadSaveCandidates } from "./saveImport";
 
 export const HEX_PREVIEW_BYTES = 256;
 const SAVE_SECTOR_SIZE = 4096;
@@ -133,6 +134,36 @@ export async function analyzeSaveFile(file: File, lookups?: SaveParserLookupCont
   return parseSaveReadOnly(file.name, new Uint8Array(buffer), lookups);
 }
 
+export interface SaveAnalysisResult {
+  selected: ParsedSave;
+  candidates: ParsedSave[];
+  warnings: string[];
+}
+
+export async function analyzeSaveArtifact(file: File, lookups?: SaveParserLookupContext): Promise<SaveAnalysisResult> {
+  const imported = await loadSaveCandidates(file);
+  const candidates = await Promise.all(
+    imported.candidates.map(async (candidate) => {
+      const parsed = await parseSaveReadOnly(candidate.fileName, candidate.bytes, lookups);
+      return {
+        ...parsed,
+        warnings: Array.from(new Set([...candidate.notes, ...imported.warnings, ...parsed.warnings]))
+      };
+    })
+  );
+
+  if (candidates.length === 0) {
+    throw new Error("No readable save candidates were found in that file.");
+  }
+
+  candidates.sort((left, right) => scoreParsedSave(right) - scoreParsedSave(left));
+  return {
+    selected: candidates[0],
+    candidates,
+    warnings: imported.warnings
+  };
+}
+
 export function exportSaveDebugJson(save: ParsedSave): string {
   return JSON.stringify(save, null, 2);
 }
@@ -210,6 +241,13 @@ function deriveParserConfidence(party: ParsedPokemon[], boxes: ParsedPokemon[][]
     return "medium";
   }
   return "low";
+}
+
+function scoreParsedSave(save: ParsedSave): number {
+  const confidenceWeight = save.metadata.parserConfidence === "medium" ? 500 : save.metadata.parserConfidence === "high" ? 1000 : 0;
+  const resolvedParty = save.party.filter((pokemon) => Boolean(pokemon.speciesId)).length;
+  const resolvedBoxes = save.boxes.flat().filter((pokemon) => Boolean(pokemon.speciesId)).length;
+  return confidenceWeight + resolvedParty * 40 + resolvedBoxes * 4 + save.party.length * 2 + save.boxes.flat().length;
 }
 
 function buildPartyWarnings(raw: RawPartyMon, species: Species | undefined, resolvedMoves: number): string[] {

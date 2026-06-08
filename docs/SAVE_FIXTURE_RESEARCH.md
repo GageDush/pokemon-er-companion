@@ -6,6 +6,8 @@ Current local status: a search across common user folders did not find obvious E
 
 Update: one private `128 KiB` local `.sav` was later found outside the repository and used for verification. Result: the current parser appears directionally close enough to resolve some party/PC rows, but too many rows still decode to unresolved numeric species IDs for the layout to be treated as validated.
 
+Update: a provided mobile GBA export archive later contained five state exports. Four of those state exports reconstructed to the same newer embedded battery save, while one reconstructed to an older distinct battery save associated with a box-management screenshot. The app can now ingest those `.gz` / `.zip` exports directly, but the parser result still remains low confidence overall because too many party/PC rows resolve only numerically.
+
 Save parsing remains read-only. This plan is for confidence-building only; it does not authorize save writing.
 
 ## Fixture Set Needed
@@ -30,6 +32,7 @@ Save parsing remains read-only. This plan is for confidence-building only; it do
 3. Document candidate changed ranges in `docs/SAVE_STRUCTURE.md`.
 4. Add tests for any candidate parser before exposing fields in UI.
 5. Promote fields to high confidence only after repeated fixture-backed validation.
+6. When mobile export bundles are the only available source, dedupe identical embedded saves and label distinct candidates before doing byte-range comparisons.
 
 ## Emulator Use
 

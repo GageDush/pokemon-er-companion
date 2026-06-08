@@ -106,7 +106,9 @@ Sprites are extracted locally from the provided NextDex archive. The mobile app 
 
 ## Save Files
 
-The Save Manager accepts local `.sav`/`.srm` files and shows file name, file size, likely format, size-family research, SHA-256, aligned block candidates, candidate offset groups, first 256 bytes as hex preview, and debug JSON export.
+The Save Manager accepts local `.sav`/`.srm` files plus mobile GBA export `.gz` / `.zip` bundles and shows file name, file size, likely format, size-family research, SHA-256, aligned block candidates, candidate offset groups, first 256 bytes as hex preview, and debug JSON export.
+
+When a mobile export contains multiple distinct embedded save candidates, the app keeps the import read-only, deduplicates identical candidates, auto-loads the strongest current candidate, and lets you switch between candidates in the Save Manager UI.
 
 The app now also attempts **source-backed, read-only party and PC previews** using Elite Redux NextDex save scripts found in the local raw archive:
 
@@ -124,6 +126,7 @@ For local verification against a private save file without using the UI:
 
 ```powershell
 node_modules\.bin\vite-node.cmd scripts\verify_save.ts C:\path\to\your.sav
+node_modules\.bin\vite-node.cmd scripts\verify_save.ts "C:\path\to\your-mobile-export.zip"
 ```
 
 ## Current App UX

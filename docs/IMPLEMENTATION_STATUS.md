@@ -11,6 +11,7 @@
 - Species detail source facts, source warnings, and richer evolution/location summaries.
 - Pokedex filters for type, confidence, and source.
 - Read-only save metadata loader: file size, likely format, SHA-256, hex preview, debug JSON export.
+- Save Manager can now ingest mobile GBA export `.gz` / `.zip` bundles, extract embedded save candidates read-only, dedupe duplicates, and let the user switch between distinct candidates.
 - Read-only save research inspector: size-family detection, aligned block candidates, generic offset groups, and richer debug export structure.
 - Source-backed read-only party preview using Elite Redux NextDex save scripts, with explicit medium-confidence warnings.
 - Source-backed read-only PC box preview using the direct-layout sector walk from local NextDex save scripts.
@@ -70,6 +71,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 - No sanitized local `.sav` or `.srm` fixtures are currently present in the repository.
 - A local search across common user folders did not surface obvious Elite Redux save fixtures yet, so fixture-backed validation is still pending.
 - A later local search did surface one private `128 KiB` `.sav` outside the repository. Verification against that save showed the parser is only partially correct right now: some party species resolved, but many party/PC rows remained unresolved numeric species IDs.
+- A provided mobile GBA export bundle later yielded two distinct embedded save candidates: one newer candidate duplicated across four states, and one older candidate represented by a box-management state. This confirms that mobile-export ingestion is useful, but also that the current parser still resolves too many rows numerically to claim validation.
 
 ## Packaging Blockers
 
@@ -79,7 +81,7 @@ Latest extraction uses `ER-nextdex-main/static/js/data/gameDataV2.65beta.json` a
 
 ## Exact Next Tasks
 
-1. Provide clean/played save fixtures and start offset comparison research against the new block/group inspector.
+1. Use the newly imported older/newer mobile save candidates to build a repeatable changed-range ladder in `docs/SAVE_STRUCTURE.md`.
 2. Prove the first stable party slot boundaries against real fixture saves so the current source-backed party preview can be promoted or corrected.
 3. Parse or extract direct evolution enum names from local NextDex/source files so numeric `kind:*` rows stop showing raw placeholders.
 4. Add Playwright UI smoke tests if browser automation dependencies are approved and stable.

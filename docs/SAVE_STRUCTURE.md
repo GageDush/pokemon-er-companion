@@ -16,6 +16,7 @@ Do not fill this with guesses. Only document findings from:
 - The current app can calculate file size, SHA-256, likely save-size family, and a 256-byte hex preview.
 - The current app can compare two save byte arrays and group changed byte ranges.
 - The current app can segment a save into aligned research blocks and generic candidate offset groups for fixture comparison.
+- The current app can ingest mobile GBA `.gz` / `.zip` exports read-only and extract an embedded 20-sector Elite Redux save candidate when a full rotated `0..19` sector sequence with the expected signature is present.
 
 ## Candidate Findings
 
@@ -37,6 +38,10 @@ Do not fill this with guesses. Only document findings from:
   - 80-byte boxed-row stride
   - 14 x 30 boxed slots as the current target shape
 - These offsets are source-backed candidates only. They are useful enough for a medium-confidence read-only preview, but not yet proven against repository fixtures.
+- A provided mobile export archive contained five state exports that reconstructed into two distinct embedded battery-save candidates:
+  - one newer candidate duplicated across four states
+  - one older candidate represented by a PC/box-management state
+- Those imported candidates are useful for diff research, but they still do not promote party or PC offsets above candidate status.
 
 ## Research Notes
 
